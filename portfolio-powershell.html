@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>body, p, h1, h2, h3, h4, h5, li, span, code, pre { user-select: none; -webkit-user-select: none; }</style>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Portfolio - PowerShell Automatisering</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <style>body, p, h1, h2, h3, h4, h5, li, span, code, pre { user-select: none; -webkit-user-select: none; }</style>
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <h1 class="logo"><a href="index.html">Portfolio Laszlo S</a></h1>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="index.html#about">Om Mig</a></li>
+          <li class="dropdown"><a href="#"><span>Projekter</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="portfolio-pixelwizards.html">Pixel Wizards Infrastruktur (H6)</a></li>
+              <li><a href="portfolio-ansible.html">Ansible Project Generator (H5)</a></li>
+              <li><a href="portfolio-cloudflix.html">CloudFlix Automatisering (H5)</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="portfolio-reports.html">Test & Fejlsøgning</a></li>
+          <li><a class="nav-link" href="index.html#contact">Kontakt</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <div class="hero hero-single route bg-image" style="background-image: url(assets/img/hero-bg.jpg)">
+    <div class="overlay-mf"></div>
+    <div class="hero-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h2 class="hero-title mb-4">PowerShell Scripting</h2>
+          <ol class="breadcrumb d-flex justify-content-center">
+            <li class="breadcrumb-item">
+              <a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Project Details</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Projektinformation</h3>
+              <ul>
+                <li><strong>Kategori</strong>: Automatisering & Systemadministration</li>
+                <li><strong>Teknologier</strong>: PowerShell, Windows Server, Active Directory</li>
+                <li><strong>Projekt Dato</strong>: 2025</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="portfolio-description">
+              <h2>Om Opgaverne</h2>
+              <p>
+                En væsentlig del af min erfaring ligger i at udvikle PowerShell-scripts for at automatisere tidskrævende og komplekse administrative opgaver i et Windows Server-miljø. Målet er altid at skabe robuste, genbrugelige og fejlfrie processer.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="mt-5 mb-5">
+
+        <!-- AD Script -->
+        <div class="row gy-4">
+            <div class="col-lg-8">
+                <h3>Automatiseret Active Directory-opsætning</h3>
+                <p>
+                    Udvikling af et omfattende script, der automatisk bygger en komplet Active Directory-struktur for en ny lokation. Scriptet opretter OU-hierarki, afdelingsspecifikke sikkerhedsgrupper og alle brugerkonti baseret på en foruddefineret plan, hvilket eliminerer manuelle fejl og sikrer konsistens.
+                </p>
+                <pre><code># Uddrag fra AD_Setup_Aarhus.ps1
+function New-AarhusUser {
+    param(
+        [string]$FullName,
+        [string]$SamAccountName,
+        [string]$Department,
+        [string[]]$MemberOf
+    )
+    $userPath = "OU=Brugere,OU=$Department,OU=$aarhusSiteOU,$basePath"
+    $userParams = @{
+        Name                  = $FullName
+        SamAccountName        = $SamAccountName
+        Path                  = $userPath
+        AccountPassword       = (ConvertTo-SecureString "<Din-Adgangskode>" -AsPlainText -Force)
+        Enabled               = $true
+        ChangePasswordAtLogon = $true
+    }
+    # ... logik til at oprette bruger og tilføje grupper ...
+}</code></pre>
+            </div>
+        </div>
+
+        <hr class="mt-5 mb-5">
+
+        <!-- File Server Script -->
+        <div class="row gy-4">
+            <div class="col-lg-8">
+                <h3>Automatiseret Filserver-opsætning med DFS</h3>
+                <p>
+                    Et script designet til at opsætte redundante filservere fra bunden. Processen inkluderer oprettelse af mappestruktur, tildeling af komplekse NTFS-rettigheder baseret på AD-grupper, etablering af SMB-shares og fuld konfiguration af et domæne-baseret DFS Namespace med replikering.
+                </p>
+                <pre><code># Uddrag fra FileServer_Setup_Aarhus.ps1
+function Set-FolderPermission {
+    param( [string]$UNCPath, [string]$Account, [string]$Permission )
+    $acl = Get-Acl -Path $UNCPath
+    $rule = New-Object System.Security.AccessControl.FileSystemAccessRule($Account, $Permission, "ContainerInherit, ObjectInherit", "None", "Allow")
+    $acl.AddAccessRule($rule)
+    Set-Acl -Path $UNCPath -AclObject $acl
+}
+
+# ... logik til at kalde funktionen for alle mapper ...
+
+# Opretter DFS Namespace
+New-DfsnRoot -Path $namespace -Type DomainV2 -EnableAccessBasedEnumeration $true</code></pre>
+            </div>
+        </div>
+        
+        <hr class="mt-5 mb-5">
+
+        <!-- Troubleshooting Scripts -->
+        <div class="row gy-4">
+            <div class="col-lg-8">
+                <h3>Scripts til Fejlsøgning & Ad-hoc Konfiguration</h3>
+                <p>
+                    Udover de store automatiserings-scripts, har jeg anvendt PowerShell til hurtigt at diagnosticere og løse specifikke problemer i infrastrukturen.
+                </p>
+                <h5>Rettelse af DHCP Server Binding</h5>
+                <pre><code># Diagnose: Find ud af hvilke servere der er autoriseret i AD
+Get-DhcpServerInDC
+
+# Løsning: Fjern forældet autorisation og tilføj den korrekte
+Remove-DhcpServerInDC -DnsName piw-dc-1.pixelwizards.dk -IPAddress &lt;gammel_ip&gt;
+Add-DhcpServerInDC -DnsName piw-dc-1.pixelwizards.dk -IPAddress &lt;korrekt_ip&gt;</code></pre>
+
+                <h5 class="mt-4">Aktivering af Remote Desktop</h5>
+                <pre><code># Hurtig aktivering af RDP og firewall-regel
+Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -Name "fDenyTSConnections" -Value 0
+Enable-NetFirewallRule -DisplayGroup "Remote Desktop"</code></pre>
+            </div>
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="copyright-box">
+            <p class="copyright">&copy; Copyright <strong>Laszlo S</strong>. All Rights Reserved</p>
+            <div class="credits">
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- Security -->
+  <script src="assets/js/security.js"></script>
+
+</body>
+
+</html>

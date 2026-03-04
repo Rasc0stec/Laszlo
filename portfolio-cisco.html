@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portfolio - Cisco Netværk & ENARSI</title>
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    body,p,h1,h2,h3,h4,h5,li,span,code,pre{user-select:none;-webkit-user-select:none}
+    .tech-pill{display:inline-block;font-size:.72rem;font-weight:600;padding:3px 10px;border-radius:3px;margin:2px;letter-spacing:.03em}
+    .pill-blue{background:#1e3a5f;color:#7ecfff}
+    .pill-green{background:#0d2b1a;color:#4caf50}
+    .pill-orange{background:#2b1a0d;color:#fd7e14}
+    .pill-red{background:#2b0d0d;color:#ff6b6b}
+    .pill-grey{background:#1e2a3b;color:#adb5bd}
+    .pill-purple{background:#1e0d2b;color:#c084fc}
+    .project-card{border:1px solid #dee2e6;border-radius:8px;padding:24px;margin-bottom:24px;transition:box-shadow .2s}
+    .project-card:hover{box-shadow:0 4px 16px rgba(13,110,253,.12)}
+    .project-card h3{font-size:1.1rem;font-weight:700;margin-bottom:6px}
+    .scope-label{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#6c757d;margin-bottom:8px}
+    .detail-list{padding-left:1.2rem;margin-top:10px}
+    .detail-list li{margin-bottom:4px;font-size:.91rem}
+    .config-block{background:#1a2535;color:#c9d1d9;border-left:3px solid #0d6efd;border-radius:4px;padding:10px 14px;font-size:.76rem;font-family:'Courier New',monospace;margin-top:10px;overflow-x:auto;white-space:pre}
+    .section-title-bar{border-left:4px solid #0d6efd;padding-left:12px;margin:2.5rem 0 1.2rem}
+    .section-title-bar h2{font-size:1.35rem;font-weight:700;margin:0}
+    .section-title-bar p{font-size:.87rem;color:#6c757d;margin:3px 0 0}
+    .cert-badge{border:2px solid #0d6efd;border-radius:6px;padding:12px 20px;text-align:center;font-weight:700;height:100%}
+    .cert-badge .cert-name{font-size:.95rem;color:#0d6efd}
+    .cert-badge .cert-sub{font-size:.76rem;color:#6c757d}
+    .summary-stat{text-align:center;padding:12px}
+    .summary-stat .stat-num{font-size:1.9rem;font-weight:800;color:#0d6efd}
+    .summary-stat .stat-lbl{font-size:.75rem;color:#6c757d;text-transform:uppercase;letter-spacing:.05em}
+    .level-badge{display:inline-block;font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:10px;margin-left:8px;vertical-align:middle}
+    .lvl-ccnp{background:#0d3b7a;color:#90c8ff}
+    .lvl-adv{background:#1a3d0d;color:#7fe07f}
+    .sub-heading{font-size:.82rem;font-weight:600;color:#0d6efd;margin:12px 0 4px;text-transform:uppercase;letter-spacing:.05em}
+  </style>
+</head>
+<body>
+
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <h1 class="logo"><a href="index.html">Portfolio Laszlo S</a></h1>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="index.html#about">Om Mig</a></li>
+          <li class="dropdown"><a href="#"><span>Projekter</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="portfolio-pixelwizards.html">Pixel Wizards Infrastruktur (H6)</a></li>
+              <li><a href="portfolio-ansible.html">Ansible Project Generator (H5)</a></li>
+              <li><a href="portfolio-cloudflix.html">CloudFlix Automatisering (H5)</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="portfolio-reports.html">Test &amp; Fejlsøgning</a></li>
+          <li><a class="nav-link" href="index.html#contact">Kontakt</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero hero-single route bg-image" style="background-image: url(assets/img/network-hero-cisco.jpg)">
+    <div class="overlay-mf"></div>
+    <div class="hero-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h2 class="hero-title mb-4">Cisco Netværk &amp; ENARSI</h2>
+          <ol class="breadcrumb d-flex justify-content-center">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active">Cisco Netværk</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+  <section id="portfolio-details" class="portfolio-details">
+  <div class="container">
+
+    <!-- INTRO -->
+    <div class="row gy-4 mt-2">
+      <div class="col-lg-7">
+        <div class="portfolio-description">
+          <h2>Cisco Netværk – 4 års praktisk arbejde</h2>
+          <p>
+            Siden 2022 har jeg arbejdet intensivt med Cisco-netværksteknologier på tværs af hjemmelab, studieprojekter og enterprise-designprojekter. Arbejdet dækker alt fra Layer 2-switching og VLAN-design til avancerede routing-protokoller, VPN-teknologier, MPLS og VRF-Lite — på CCNP ENARSI-niveau (300-410).
+          </p>
+          <p>Alle konfigurationer herunder er egne, praktiske implementeringer — ikke teoretiske gennemgange. Materialet dækker 148 filer, 30+ device-konfigurationer og 66+ ENARSI labs over 4 år.</p>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="row">
+          <div class="col-6"><div class="summary-stat"><div class="stat-num">4+</div><div class="stat-lbl">År med Cisco</div></div></div>
+          <div class="col-6"><div class="summary-stat"><div class="stat-num">30+</div><div class="stat-lbl">Device configs</div></div></div>
+          <div class="col-6"><div class="summary-stat"><div class="stat-num">12+</div><div class="stat-lbl">Protokoller</div></div></div>
+          <div class="col-6"><div class="summary-stat"><div class="stat-num">66+</div><div class="stat-lbl">ENARSI labs</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CERT BADGES -->
+    <div class="row gy-3 mt-1 mb-2">
+      <div class="col-md-3"><div class="cert-badge"><div class="cert-name">CCNP ENARSI 300-410</div><div class="cert-sub">Lab-implementeret &amp; studeret</div></div></div>
+      <div class="col-md-3"><div class="cert-badge"><div class="cert-name">CCNP ENCORE</div><div class="cert-sub">Switching, SD-WAN, Wireless</div></div></div>
+      <div class="col-md-3"><div class="cert-badge"><div class="cert-name">Cisco IOS &amp; IOS-XE</div><div class="cert-sub">3750X · 3850 · 4221 · 3650</div></div></div>
+      <div class="col-md-3"><div class="cert-badge"><div class="cert-name">Lab-miljøer</div><div class="cert-sub">GNS3 · EVE-NG · Packet Tracer · Fysisk HW</div></div></div>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- SEKTION 1: ROUTING PROTOKOLLER -->
+    <!-- ═══════════════════════════════════════ -->
+    <div class="section-title-bar">
+      <h2>Routing Protokoller</h2>
+      <p>OSPF, EIGRP, BGP og RIPng — implementeret og tunet i komplekse dual-stack topologier</p>
+    </div>
+
+    <div class="project-card">
+      <div class="scope-label">H4 ENARSI Projekt &mdash; Enterprise Campus</div>
+      <h3>Multi-Protocol Enterprise Topologi <span class="level-badge lvl-ccnp">CCNP</span></h3>
+      <div>
+        <span class="tech-pill pill-blue">OSPF Multi-Area</span>
+        <span class="tech-pill pill-blue">EIGRP</span>
+        <span class="tech-pill pill-blue">BGP AS 65292/65301/65302</span>
+        <span class="tech-pill pill-blue">RIPng</span>
+        <span class="tech-pill pill-green">IPv4 + IPv6 Dual-Stack</span>
+        <span class="tech-pill pill-purple">VRF-Lite</span>
+        <span class="tech-pill pill-grey">EVE-NG</span>
+      </div>
+      <ul class="detail-list">
+        <li>Komplet enterprise POD-design med R1, R2, R3, R4, D1 (distribution) og D2 — dual-stack IPv4/IPv6 på alle links og loopbacks</li>
+        <li>OSPF multi-area: Area 0 (backbone), Area 1, Area 2, Area 3 og Area Z — med ABR-konfiguration og stub-netværk</li>
+        <li>EIGRP kørende på D1 med redistribution fra RIPng (R2-RIP VRF annoncerer VLANs til D1 via RIPng, redistribueres til EIGRP)</li>
+        <li>BGP peering på tværs af tre autonome systemer (AS 65292, 65301, 65302) med ekstern annoncering</li>
+        <li>VRF-Lite på R2: fire virtuelle routere (R2-RIP, R2-Az, R2-EIGRP, R2-A0) med sub-interfaces til D1, D2 og R3</li>
+        <li>D1 VLAN 210–260 (6 VLANs), D2 VLAN 110–160 (6 VLANs) — alle med IPv4 og IPv6 SVI</li>
+        <li>DMZ-zone med syslog, webserver og RADIUS tilkoblet via dedikeret interface</li>
+      </ul>
+      <div class="config-block">
+! VRF Challenge — Super Avanceret niveau gennemført:
+! R2 VRF-instanser: R2-RIP · R2-Az · R2-EIGRP · R2-A0
+! Sub-interfaces på alle links: R2-EIGRP → D1 &amp; R3, R2-A0 → D2 &amp; R3
+! Area Z konfigureret som stub — redistribution af RIPng loopbacks til OSPF
+! analyseret impact på stub (external LSA type 7 → type 5 konvertering blokeret)</div>
+    </div>
+
+    <div class="project-card">
+      <div class="scope-label">OSPF &mdash; Distribution Layer</div>
+      <h3>OSPFv2 med HSRP Redundans &mdash; Verificeret i Drift</h3>
+      <div>
+        <span class="tech-pill pill-blue">OSPFv2</span>
+        <span class="tech-pill pill-blue">HSRP</span>
+        <span class="tech-pill pill-blue">Area 0</span>
+        <span class="tech-pill pill-green">Aktiv/Standby verificeret</span>
+      </div>
+      <ul class="detail-list">
+        <li>To distribution-switche (D1A, D1B) i OSPF Area 0 med router-ID'er <code>10.20.20.3</code> og <code>10.20.20.2</code></li>
+        <li>OSPF-databasen indeholder 3 Router LSA'er og 14 Net LSA'er — fuld konvergens verificeret live på begge noder</li>
+        <li>HSRP konfigureret på 11 VLANs (VLAN 10–20): D1A er standby på alle grupper, D1B er active — verificeret via <code>show standby neighbors</code></li>
+        <li>Passive-interface default med selektiv aktivering på routed L3-ports</li>
+      </ul>
+      <div class="config-block">
+! D1B (active) — verificeret output:
+! HSRP Vlan10-20: Active groups 10-20 mod 10.20.10.3→10.20.20.3
+! OSPF DB: 14 Net LSA'er advertiseret fra 10.20.20.3 (D1A)</div>
+    </div>
+
+    <div class="project-card">
+      <div class="scope-label">EIGRP for IPv6 &mdash; CCNP Lab</div>
+      <h3>Named EIGRP vs Classic EIGRP &mdash; Wide Metrics &amp; Unequal Load Balancing <span class="level-badge lvl-ccnp">CCNP</span></h3>
+      <div>
+        <span class="tech-pill pill-blue">EIGRPv6</span>
+        <span class="tech-pill pill-blue">Named EIGRP</span>
+        <span class="tech-pill pill-green">Wide Metrics (64-bit)</span>
+        <span class="tech-pill pill-orange">Variance / Unequal LB</span>
+        <span class="tech-pill pill-red">HMAC-SHA-256</span>
+        <span class="tech-pill pill-grey">Prefix-list filtering</span>
+      </div>
+      <ul class="detail-list">
+        <li>R1 og R3: Named EIGRP (<code>router eigrp EIGRP_IPV6</code>, AS 43) — R2: Classic EIGRP — begge i samme AS, forklaret metrisk inkompatibilitet</li>
+        <li>Wide metrics (64-bit) analyseret: RIB-scale factor 128 giver forskel mellem topology table og routing table (FD 2048000 → RIB 16000)</li>
+        <li>Unequal-cost load balancing med <code>variance 2</code> — feasibility condition verificeret manuelt inden aktivering</li>
+        <li>Summary routes på interface-niveau: <code>::/0</code> (default) og <code>2001:db8:abcd::/56</code> (5 loopbacks aggregeret)</li>
+        <li>Route filtering: IPv6 prefix-list <code>DROP-CAFE-1</code> med distribute-list ud på specifikt interface mod R3</li>
+        <li>Dual authentication: MD5 key-chain (Classic) og HMAC-SHA-256 (Named) — ikke kompatible, konfigureret separat per interface</li>
+      </ul>
+      <div class="config-block">
+! Named EIGRP — R1:
+router eigrp EIGRP_IPV6
+ address-family ipv6 unicast autonomous-system 43
+  af-interface g0/0/0
+   authentication key-chain EIGRPv6-AUTHEN-KEY
+   authentication mode md5
+  af-interface g0/0/1.1
+   authentication mode hmac-sha-256 $3cre7!!
+  topology base
+   variance 2</div>
+    </div>
+
+    <div class="project-card">
+      <div class="scope-label">BGP &mdash; Advanced Routing</div>
+      <h3>MP-BGP, Path Manipulation og Route Redistribution <span class="level-badge lvl-ccnp">CCNP</span></h3>
+      <div>
+        <span class="tech-pill pill-blue">eBGP</span>
+        <span class="tech-pill pill-blue">iBGP</span>
+        <span class="tech-pill pill-blue">MP-BGP</span>
+        <span class="tech-pill pill-orange">AS-PATH / MED / Local-Pref</span>
+        <span class="tech-pill pill-green">BGP Communities</span>
+        <span class="tech-pill pill-purple">Redistribution EIGRP↔BGP</span>
+      </div>
+      <ul class="detail-list">
+        <li>eBGP peering konfigureret på tværs af multiple AS'er — path manipulation via AS-PATH prepending, MED og Local Preference</li>
+        <li>MP-BGP (Multiprotocol BGP) med IPv4 og IPv6 address families i samme BGP-proces</li>
+        <li>BGP Communities til route-tagging og policy-baseret filtering</li>
+        <li>Route redistribution: BGP ↔ EIGRP med metric-translation (<code>redistribute bgp 10 metric 10000 100 255 1 1500</code>)</li>
+        <li>iBGP multipath equal-cost load balancing designet og dokumenteret med Draw.io topologi</li>
+        <li>BGP troubleshooting labs gennemført: neighbor states, missing network statements, wrong AD</li>
+      </ul>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- SEKTION 2: VPN TEKNOLOGIER -->
+    <!-- ═══════════════════════════════════════ -->
+    <div class="section-title-bar">
+      <h2>VPN Teknologier</h2>
+      <p>DMVPN, IPsec og GRE — implementeret fra hub-konfiguration til spoke-to-spoke optimering</p>
+    </div>
+
+    <div class="project-card">
+      <div class="scope-label">DMVPN &mdash; Dynamic Multipoint VPN</div>
+      <h3>DMVPN Phase 1 &amp; Phase 3 med IPv6 Dual-Stack <span class="level-badge lvl-ccnp">CCNP</span></h3>
+      <div>
+        <span class="tech-pill pill-blue">DMVPN Phase 1</span>
+        <span class="tech-pill pill-blue">DMVPN Phase 3</span>
+        <span class="tech-pill pill-green">NHRP</span>
+        <span class="tech-pill pill-green">GRE Multipoint</span>
+        <span class="tech-pill pill-orange">IPv6 Dual-Stack</span>
+        <span class="tech-pill pill-red">NHRP Auth</span>
+      </div>
+      <ul class="detail-list">
+        <li>Hub konfigureret med <code>tunnel mode gre multipoint</code>, NHRP network-id, <code>ip nhrp map multicast dynamic</code> og <code>ip nhrp redirect</code></li>
+        <li>Phase 3 Spokes: <code>ip nhrp shortcut</code> for direkte spoke-to-spoke kommunikation uden hub-forwarding</li>
+        <li>Dual-stack: IPv4 og IPv6 tunnel-adresser (2A02:188:5204:FAC0::/128 og FAC1::/128) på separate tunnel interfaces</li>
+        <li>Multiple tunnel interfaces med <code>tunnel key</code> for at skelne trafikken på samme tunnel source</li>
+        <li>NHRP authentication konfigureret, NHRP registration no-unique for DHCP-baserede transport-interfaces</li>
+        <li>Troubleshooting: recursive routing identificeret og løst ved at stoppe routing-annoncering af tunnel source-netværk</li>
+      </ul>
+      <div class="config-block">
+! DMVPN Hub:
+interface tunnel 10
+ tunnel source Loopback0
+ tunnel mode gre multipoint
+ ip nhrp network-id 2
+ ip nhrp map multicast dynamic
+ ip nhrp redirect
+ tunnel key 2
+ ip mtu 1500
+ ip tcp adjust-mss 1360
+
+! Phase 3 Spoke:
+interface tunnel 10
+ ip nhrp shortcut
+ ip nhrp nhs [hub-addr] nbma [nbma-addr] multicast</div>
+    </div>
+
+    <div class="project-card">
+      <div class="scope-label">IPsec &amp; GRE</div>
+      <h3>GRE over IPsec Site-to-Site VPN <span class="level-badge lvl-ccnp">CCNP</span></h3>
+      <div>
+        <span class="tech-pill pill-blue">IPsec IKEv1/v2</span>
+        <span class="tech-pill pill-blue">ISAKMP / ESP</span>
+        <span class="tech-pill pill-green">GRE Tunnel</span>
+        <span class="tech-pill pill-orange">AES-256 / SHA-256</span>
+        <span class="tech-pill pill-grey">DH Group 14+</span>
+      </div>
+      <ul class="detail-list">
+        <li>IPsec site-to-site VPN implementeret med IKEv1/v2 — ISAKMP policy, transform-set og crypto map konfigureret</li>
+        <li>GRE tunnel over IPsec for at transportere OSPF og multicast-trafik igennem den krypterede tunnel</li>
+        <li>Kryptering: AES-256 med SHA-256 og DH Group 14 (minimum) for at undgå svage cipher-suites</li>
+        <li>Forstår distinction: GRE alene er ikke sikret — IPsec tilføjer fortrolighed, integritet og autentificering</li>
+        <li>Dokumenteret i eget lab-dokument med topologi, konfigurationstrin og verifikationskommandoer</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <div class="scope-label">H5 Netværksprojekt &mdash; Eget Topologidesign</div>
+      <h3>HQ + Branch Enterprise Design med Dual-Firewall og IPsec VPN Tunnel</h3>
+      <div>
+        <span class="tech-pill pill-blue">HSRP</span>
+        <span class="tech-pill pill-blue">LACP EtherChannel</span>
+        <span class="tech-pill pill-green">OPNSense IPsec S2S</span>
+        <span class="tech-pill pill-green">PfSync HA</span>
+        <span class="tech-pill pill-purple">Proxmox VE</span>
+        <span class="tech-pill pill-orange">CARP / VIP</span>
+        <span class="tech-pill pill-grey">Dual-Stack IPv4/IPv6</span>
+      </div>
+      <div class="mt-2 mb-2">
+        <img src="assets/img/cisco-topology-hq-branch.png" alt="HQ Branch Topologi" class="img-fluid rounded" style="border:1px solid #dee2e6;max-height:300px;object-fit:contain;background:#fff">
+        <p class="mt-1" style="font-size:.75rem;color:#6c757d">Eget Draw.io design: HQ med dual Proxmox-noder, CARP VIP (192.168.1.1), PfSync HA-firewalls og OPNSense IPsec S2S VPN tunnel til Branch</p>
+      </div>
+      <ul class="detail-list">
+        <li>HQ: Dual Proxmox-noder (PVE01/PVE02) med VM-firewalls (DK-HQ-HV-FW01/FW02) i PfSync HA-par — CARP VIP <code>192.168.1.1/2</code></li>
+        <li>Branch: Separat Proxmox-node med OPNSense firewall — IPsec site-to-site VPN overlay <code>172.16.99.1/30</code> ↔ <code>172.16.99.2/30</code></li>
+        <li>Distribution layer: DK-HQ-DIST-SW01/02 (Cisco 3650) med HSRP VIPs og Port-Channel1 (LACP) til begge ACC-switches</li>
+        <li>Dual-stack: IPv4 og IPv6 (FD00:DEAD:BEEF:1010::2/64) på branch access-VLAN</li>
+        <li>Fiber-forbindelse via core switches med WAN og LAN patch-porte til ISP og lab-netværk</li>
+      </ul>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- SEKTION 3: MPLS & VRF -->
+    <!-- ═══════════════════════════════════════ -->
+    <div class="section-title-bar">
+      <h2>MPLS &amp; VRF</h2>
+      <p>Label switching, tenant-separation og virtuelle routing-instanser på enterprise-niveau</p>
+    </div>
+
+    <div class="project-card">
+      <div class="scope-label">MPLS &mdash; Label Distribution Protocol</div>
+      <h3>MPLS med MP-BGP og VRF-Aware Routing <span class="level-badge lvl-ccnp">CCNP</span></h3>
+      <div>
+        <span class="tech-pill pill-blue">MPLS LDP</span>
+        <span class="tech-pill pill-blue">MP-BGP</span>
+        <span class="tech-pill pill-purple">VRF</span>
+        <span class="tech-pill pill-green">RD / RT</span>
+        <span class="tech-pill pill-orange">PE-CE Routing</span>
+      </div>
+      <ul class="detail-list">
+        <li>MPLS LDP aktiveret på core-links — label distribution verificeret med <code>show mpls ldp neighbor</code></li>
+        <li>VRF-instanser oprettet med Route Distinguisher (RD) og Route Target (RT) for tenant-separation</li>
+        <li>MP-BGP (address family vpnv4) til at distribuere VRF-routes mellem PE-routere</li>
+        <li>PE-CE routing: OSPF per VRF og EIGRP per VRF i separate routing-processer</li>
+        <li>GRE over IPv6 tunnel til R2 konfigureret inden for VRF-kontekst</li>
+        <li>Implementeret i ENCOR/ENARSI Batch 01 og 02 lab-dokumenter (egne konfigurationer)</li>
+      </ul>
+      <div class="config-block">
+! MPLS + VRF (PE-router):
+ip vrf BLUE
+ rd 10:1
+ route-target export 10:1
+ route-target import 10:1
+!
+router ospf 101 vrf BLUE
+ redistribute bgp 10 subnets
+!
+router bgp 10
+ address-family vpnv4
+  neighbor [P-router] activate</div>
+    </div>
+
+    <div class="project-card">
+      <div class="scope-label">VRF-Lite &mdash; VRF Challenge</div>
+      <h3>VRF-Lite med 4 Virtuelle Routere og Multi-Protocol Redistribution <span class="level-badge lvl-adv">Avanceret</span></h3>
+      <div>
+        <span class="tech-pill pill-purple">VRF-Lite</span>
+        <span class="tech-pill pill-blue">RIPng</span>
+        <span class="tech-pill pill-blue">OSPF Stub</span>
+        <span class="tech-pill pill-blue">EIGRP</span>
+        <span class="tech-pill pill-green">Sub-interfaces</span>
+        <span class="tech-pill pill-orange">Redistribution</span>
+      </div>
+      <ul class="detail-list">
+        <li>R2 opdelt i 4 VRF-instanser: R2-RIP, R2-Az, R2-EIGRP, R2-A0 — alle med egne routing-protokoller og loopbacks</li>
+        <li>R2-RIP annoncerer VLANs og loopbacks til D1 via RIPng — D1 redistribuerer til EIGRP</li>
+        <li>R2-Az annoncerer via OSPF til D2 i Area Z, konfigureret som stub — analyseret impact af redistribution på stub (NSSA type 7 LSA)</li>
+        <li>Ekstra avanceret: sub-interfaces på alle links, R2-EIGRP og R2-A0 tilkoblet D1/D2 og R3 via separate sub-interfaces</li>
+        <li>Super avanceret niveau gennemgået: RIPng VRF med forbindelse til R2-Az — analyseret kabling og konfigurationskrav</li>
+      </ul>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- SEKTION 4: ENTERPRISE SWITCHING & DESIGN -->
+    <!-- ═══════════════════════════════════════ -->
+    <div class="section-title-bar">
+      <h2>Enterprise Switching &amp; Netværksdesign</h2>
+      <p>DMZ-arkitektur, Layer 2/3 design og hjemmelab med sikkerhedssegmentering</p>
+    </div>
+
+    <div class="project-card">
+      <div class="scope-label">CloudFlix / Gruppe 4 &mdash; Enterprise Campus</div>
+      <h3>DMZ-Arkitektur med Dual-Firewall, OSPF Area 1 og PIM Multicast</h3>
+      <div>
+        <span class="tech-pill pill-blue">OSPF Area 0/1</span>
+        <span class="tech-pill pill-red">Dual Firewall</span>
+        <span class="tech-pill pill-green">PIM Sparse-Mode</span>
+        <span class="tech-pill pill-green">PIM RP</span>
+        <span class="tech-pill pill-grey">DMZ-SW01/02</span>
+        <span class="tech-pill pill-orange">QoS Policy</span>
+      </div>
+      <ul class="detail-list">
+        <li>DMZ-SW01 konfigureret som OSPF Area 1 ABR og PIM Rendezvous Point (<code>ip pim rp-address 10.0.0.11</code>)</li>
+        <li>Dual-firewall design: AARH-FW01 og FW02 med separate L3-links til begge DMZ-switches (redundant topologi)</li>
+        <li>Tre Proxmox-noder tilkoblet via /30-links til begge DMZ-switche — fuld mesh til compute-layer</li>
+        <li>QoS policy-map på outbound FW-interfaces: HTTPS og DNS tilladt med policing, alt andet droppes</li>
+        <li>SSH hardening: AAA med lokal authentication, VTY access-class begrænset til management-VLAN og DMZMGMT</li>
+        <li>BLACKHOLE VLAN 999 med shutdown på alle ubrugte porte</li>
+      </ul>
+      <div class="config-block">
+! DMZ-SW01 August-konfiguration:
+router ospf 1
+ router-id 1.1.3.1
+ passive-interface default
+ no passive-interface GigabitEthernet1/0/1  ! → FW01
+ no passive-interface GigabitEthernet1/0/2  ! → FW02
+ no passive-interface GigabitEthernet1/0/3-5 ! → Proxmox nodes
+ network 10.4.99.12 0.0.0.3 area 1
+ network 10.4.99.28 0.0.0.3 area 1</div>
+    </div>
+
+    <div class="project-card">
+      <div class="scope-label">Hjemmelab &mdash; Cisco 3750X &amp; 3850</div>
+      <h3>Multi-VLAN Hjemmenetværk med L3-Switching, ACL-Isolation og QoS</h3>
+      <div>
+        <span class="tech-pill pill-blue">L3 Switching</span>
+        <span class="tech-pill pill-blue">VLAN Segmentering</span>
+        <span class="tech-pill pill-orange">Extended ACLs</span>
+        <span class="tech-pill pill-green">DHCP Server</span>
+        <span class="tech-pill pill-grey">QoS DSCP</span>
+        <span class="tech-pill pill-grey">PortFast / STP</span>
+      </div>
+      <ul class="detail-list">
+        <li>5 VLANs: Mgmt (10), Trusted (20), IoT (30), Guest (40), WAN (99) — alle med SVI og DHCP-pool</li>
+        <li>GUEST_ISOLATION ACL: blokerer al adgang til RFC1918-adresser, tillader kun internet</li>
+        <li>IOT_INTERNET_RULES ACL: IoT-enheder isoleret fra interne netværk men har internetadgang</li>
+        <li>MGMT_PROTECTION ACL: kun Trusted-netværket (VLAN 20) kan tilgå management-SVI</li>
+        <li>QoS policy med DSCP EF (voice priority 15%) og DSCP AF41 (video remaining 50%) på WAN-interface</li>
+        <li>Trunk-porte til access points med native VLAN 10 og allowed VLANs per SSID</li>
+        <li>Konfigureret på både 3750X (IOS) og 3850 (IOS-XE) — platform-forskelle dokumenteret</li>
+      </ul>
+      <div class="config-block">
+! ACL-eksempel — Guest isolation:
+ip access-list extended GUEST_ISOLATION
+ deny   ip any 192.168.0.0 0.0.255.255
+ deny   ip any 10.0.0.0 0.255.255.255
+ deny   ip any 172.16.0.0 0.15.255.255
+ permit ip any any
+
+! QoS — Voice prioritering:
+policy-map QOS_POLICY_OUT
+ class VOICE_TRAFFIC
+  priority percent 15
+ class VIDEO_TRAFFIC
+  bandwidth remaining percent 50</div>
+    </div>
+
+    <div class="project-card">
+      <div class="scope-label">Layer 2/3 Topologi &mdash; Switching</div>
+      <h3>Enterprise Switching: STP, EtherChannel, Inter-VLAN Routing og L2-Sikkerhed</h3>
+      <div class="mt-2 mb-2">
+        <img src="assets/img/cisco-topology-switching.png" alt="DK-HQ Switching Topologi" class="img-fluid rounded" style="border:1px solid #dee2e6;max-height:260px;object-fit:contain;background:#fff">
+        <p class="mt-1" style="font-size:.75rem;color:#6c757d">Eget Draw.io diagram: DK-HQ distribution layer med DIST-SW01/02 (Cisco 3650 HSRP), ACC-SW01/02, Port-Channel1 (LACP) og 8 VLANs</p>
+      </div>
+      <div>
+        <span class="tech-pill pill-blue">STP / RSTP / MSTP</span>
+        <span class="tech-pill pill-blue">EtherChannel LACP</span>
+        <span class="tech-pill pill-green">802.1Q Trunking</span>
+        <span class="tech-pill pill-orange">BPDU Guard</span>
+        <span class="tech-pill pill-orange">Root Guard</span>
+        <span class="tech-pill pill-grey">Private VLANs</span>
+      </div>
+      <ul class="detail-list">
+        <li>Hierarchisk campus-design: Core → Distribution → Access med redundante uplinks og STP-kontrol</li>
+        <li>EtherChannel (LACP active/passive) på distribution-uplinks — load balancing og STP-kompatibilitet</li>
+        <li>BPDU Guard på access-porte, Root Guard mod distribution for at forhindre uautoriseret root bridge election</li>
+        <li>Multi-site design dokumenteret: DK-HQ (DIST-SW01/02, ACC-SW01/02) og DK-BR (DIST-SW01)</li>
+        <li>Switching-topologi dokumenteret med Draw.io inkl. Layer 2 og Layer 3 diagrammer</li>
+      </ul>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- SEKTION 5: TEKNOLOGI-OVERBLIK -->
+    <!-- ═══════════════════════════════════════ -->
+    <div class="section-title-bar">
+      <h2>Teknologi-Overblik</h2>
+      <p>Komplet liste over protokoller og features implementeret i praksis</p>
+    </div>
+
+    <div class="row gy-3 mb-4">
+      <div class="col-md-4">
+        <div class="project-card" style="margin-bottom:0">
+          <div class="sub-heading">Routing</div>
+          <div>
+            <span class="tech-pill pill-blue">OSPFv2 / OSPFv3</span>
+            <span class="tech-pill pill-blue">EIGRP IPv4/IPv6</span>
+            <span class="tech-pill pill-blue">Named EIGRP</span>
+            <span class="tech-pill pill-blue">eBGP / iBGP</span>
+            <span class="tech-pill pill-blue">MP-BGP</span>
+            <span class="tech-pill pill-blue">RIPng</span>
+            <span class="tech-pill pill-blue">Route Redistribution</span>
+            <span class="tech-pill pill-blue">BGP Path Manipulation</span>
+            <span class="tech-pill pill-blue">BGP Communities</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card" style="margin-bottom:0">
+          <div class="sub-heading">VPN &amp; Tunneling</div>
+          <div>
+            <span class="tech-pill pill-green">DMVPN Phase 1 &amp; 3</span>
+            <span class="tech-pill pill-green">IPsec IKEv1/v2</span>
+            <span class="tech-pill pill-green">GRE / GRE over IPsec</span>
+            <span class="tech-pill pill-green">NHRP</span>
+            <span class="tech-pill pill-green">IPv6 DMVPN</span>
+          </div>
+          <div class="sub-heading mt-2">MPLS &amp; VRF</div>
+          <div>
+            <span class="tech-pill pill-purple">MPLS LDP</span>
+            <span class="tech-pill pill-purple">VRF-Lite</span>
+            <span class="tech-pill pill-purple">MP-BGP VPNv4</span>
+            <span class="tech-pill pill-purple">RD / RT</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card" style="margin-bottom:0">
+          <div class="sub-heading">Switching &amp; Sikkerhed</div>
+          <div>
+            <span class="tech-pill pill-orange">STP / RSTP / MSTP</span>
+            <span class="tech-pill pill-orange">EtherChannel LACP</span>
+            <span class="tech-pill pill-orange">BPDU Guard / Root Guard</span>
+            <span class="tech-pill pill-orange">802.1Q Trunking</span>
+            <span class="tech-pill pill-orange">ACL Standard/Extended/IPv6</span>
+            <span class="tech-pill pill-orange">Zone-Based Firewall</span>
+            <span class="tech-pill pill-orange">AAA / SSH</span>
+          </div>
+          <div class="sub-heading mt-2">Andre</div>
+          <div>
+            <span class="tech-pill pill-grey">HSRP / VRRP</span>
+            <span class="tech-pill pill-grey">PIM Sparse-Mode</span>
+            <span class="tech-pill pill-grey">CEF</span>
+            <span class="tech-pill pill-grey">NAT/PAT</span>
+            <span class="tech-pill pill-grey">QoS DSCP</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="copyright-box">
+            <p class="copyright">&copy; Copyright <strong>Laszlo S</strong>. All Rights Reserved</p>
+            <div class="credits">Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/security.js"></script>
+</body>
+</html>

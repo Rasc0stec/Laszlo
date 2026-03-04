@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>body, p, h1, h2, h3, h4, h5, li, span, code, pre { user-select: none; -webkit-user-select: none; }</style>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Portfolio - Pixel Wizards Infrastruktur</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <h1 class="logo"><a href="index.html">Portfolio Laszlo S</a></h1>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="index.html#about">Om Mig</a></li>
+          <li class="dropdown"><a href="#"><span>Projekter</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="portfolio-pixelwizards.html">Pixel Wizards Infrastruktur (H6)</a></li>
+              <li><a href="portfolio-ansible.html">Ansible Project Generator (H5)</a></li>
+              <li><a href="portfolio-cloudflix.html">CloudFlix Automatisering (H5)</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="portfolio-reports.html">Test & Fejlsøgning</a></li>
+          <li><a class="nav-link" href="index.html#contact">Kontakt</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <div class="hero hero-single route bg-image" style="background-image: url(assets/img/stock-1.jpg)">
+    <div class="overlay-mf"></div>
+    <div class="hero-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h2 class="hero-title mb-4">Pixel Wizards Infrastruktur (H6)</h2>
+          <ol class="breadcrumb d-flex justify-content-center">
+            <li class="breadcrumb-item">
+              <a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Project Details</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-12">
+            <div class="portfolio-description">
+              <h2>Projektoversigt</h2>
+              <p>
+                Dette projekt var min afsluttende svendeprøve som datatekniker. Opgaven var at designe og implementere en komplet, redundant og skalerbar PaaS-infrastruktur for en fiktiv spil-virksomhed, "Pixel Wizards ApS", der udgiver spil via en SaaS-model.
+              </p>
+            </div>
+            <div class="portfolio-description mt-4">
+              <h3>Overordnet Arkitektur</h3>
+                <p>
+                  Infrastrukturen blev designet fra bunden med fokus på High-Availability, sikkerhed og automatisering.
+                </p>
+                
+                <h4>Kernekomponenter:</h4>
+                <ul>
+                  <li><strong>Perimeter-sikkerhed:</strong> En HA-klynge af 2x **FortiGate 200E** firewalls, hvorpå al inter-VLAN routing blev håndteret centralt.</li>
+                  <li><strong>Virtualisering & Compute:</strong> Et 3-nodes **Proxmox VE-cluster** bygget på ProLiant Gen10 servere.</li>
+                  <li><strong>Distribueret Storage:</strong> Et hyper-converged **Ceph-cluster** for skalerbar og fejltolerant lagring til alle VM'er og containere.</li>
+                  <li><strong>Backup & Restore:</strong> En dedikeret **Proxmox Backup Server (PBS)** for online backup, suppleret af en offline backup-server for 3-2-1 compliance.</li>
+                  <li><strong>Applikations-platform:</strong> Alle tjenester (web, spil, mail, etc.) blev deployet som **containere** på dedikerede VM'er for at maksimere skalerbarhed og muliggøre Infrastructure as Code (IaC).</li>
+                </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row gy-4 mt-4">
+            <div class="col-lg-4">
+                <div class="portfolio-info">
+                  <h3>Projektinformation</h3>
+                  <ul>
+                    <li><strong>Kategori</strong>: Fuld Infrastruktur Design</li>
+                    <li><strong>Teknologier</strong>: Proxmox, Ceph, Ansible, PowerShell, Active Directory, FortiGate, DFS</li>
+                    <li><strong>Projekt Dato</strong>: Januar - Februar, 2026</li>
+                  </ul>
+                </div>
+      
+                <div class="portfolio-info mt-4">
+                  <h3>Kernekompetencer i Projektet</h3>
+                  <ul>
+                    <li><strong>Virtualisering:</strong> Opsætning af Proxmox VE cluster med Ceph for hyperkonvergeret storage (HCI).</li>
+                    <li><strong>Netværk & Sikkerhed:</strong> Konfiguration af FortiGate Firewall (HA), VLAN-segmentering og routing.</li>
+                    <li><strong>Microsoft Services:</strong> Implementering af redundant Active Directory, DNS, DHCP med failover og DFS med replikering.</li>
+                    <li><strong>Automatisering:</strong> Brug af Ansible til udrulning af klienter og PowerShell til konfiguration af Windows-roller.</li>
+                    <li><strong>Systematisk Fejlsøgning:</strong> Identifikation og løsning af komplekse fejl i DHCP, Proxmox API og netværks-routing.</li>
+                  </ul>
+                </div>
+              </div>
+
+            <div class="col-lg-8">
+                <div class="portfolio-description">
+                    <h2>Arkitektur & Design</h2>
+                    <p>
+                        Løsningens design er baseret på best-practice principper for redundans og sikkerhed. Active Directory er struktureret efter Microsofts Tiered Administration Model for at adskille administrative rettigheder og minimere angrebsfladen.
+                    </p>
+                    <div class="mermaid-diagram-container" style="padding-top: 30rem; padding-bottom: 30rem;">
+                        <img src="assets/img/pixelwizards_ad_diagram.png" class="img-fluid rotate-90-cw" alt="Active Directory Struktur Diagram">
+                    </div>
+                    <p class="mt-3"><em>Diagrammet ovenfor viser den logiske opbygning af Active Directory, inklusiv OU-hierarki og et eksempel på rettighedstildeling via gruppe-nesting (AGDLP-princippet).</em></p>
+                </div>
+
+                <div class="portfolio-description mt-4">
+                  <h2>Udvalgt Fejlsøgnings-case: DHCP Failover</h2>
+                  <p><strong>Problem:</strong> Nye klienter på VLAN 13 kunne ikke opnå en IP-adresse fra DHCP-serverne.</p>
+                  <p><strong>Analyse:</strong> En analyse af server-logs og service-bindings viste, at DHCP-servicen ikke lyttede på det korrekte netværksinterface. Rodårsagen blev sporet til en forældet AD-autorisering, der forhindrede servicen i at binde til alle interfaces efter en IP-ændring.</p>
+                  <p><strong>Løsning:</strong> De forkerte AD-objekter blev fjernet med <code>Remove-DhcpServerInDC</code>, hvorefter serverne blev korrekt gen-autoriseret med <code>Add-DhcpServerInDC</code>. En genstart af DHCP-servicen løste problemet permanent.</p>
+              </div>
+
+            </div>
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="copyright-box">
+            <p class="copyright">&copy; Copyright <strong>Laszlo S</strong>. All Rights Reserved</p>
+            <div class="credits">
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- Security -->
+  <script src="assets/js/security.js"></script>
+</body>
+
+</html>

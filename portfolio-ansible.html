@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>body, p, h1, h2, h3, h4, h5, li, span, code, pre { user-select: none; -webkit-user-select: none; }</style>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Portfolio - Ansible Project Generator</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <h1 class="logo"><a href="index.html">Portfolio Laszlo S</a></h1>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="index.html#about">Om Mig</a></li>
+          <li class="dropdown"><a href="#"><span>Projekter</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="portfolio-pixelwizards.html">Pixel Wizards Infrastruktur (H6)</a></li>
+              <li><a href="portfolio-ansible.html">Ansible Project Generator (H5)</a></li>
+              <li><a href="portfolio-cloudflix.html">CloudFlix Automatisering (H5)</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="portfolio-reports.html">Test & Fejlsøgning</a></li>
+          <li><a class="nav-link" href="index.html#contact">Kontakt</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <div class="hero hero-single route bg-image" style="background-image: url(assets/img/stock-2.jpg)">
+    <div class="overlay-mf"></div>
+    <div class="hero-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h2 class="hero-title mb-4">Ansible Project Generator</h2>
+          <ol class="breadcrumb d-flex justify-content-center">
+            <li class="breadcrumb-item">
+              <a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Project Details</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+            <div class="col-lg-12">
+                <div class="portfolio-description">
+                  <h2>Projektoversigt & Formål</h2>
+                  <p>
+                    Dette projekt, udviklet i H5-regi, fokuserer på at løse en central udfordring i systemadministration: hurtig, forudsigelig og ensartet udrulning af klient-maskiner. Løsningen er et "Project Generator"-princip bygget med Ansible. I stedet for en statisk playbook, eksekverer man en master-playbook, der interaktivt indsamler alle nødvendige variabler (servernavne, IP-adresser, credentials) og derefter bygger et komplet, selvstændigt og præ-konfigureret Ansible-projekt, der er klar til at udrulle de specificerede maskiner.
+                  </p>
+                  <p>
+                    Formålet er at skabe en ekstremt fleksibel og genbrugelig løsning, der kan tilpasses ethvert Proxmox-miljø uden at skulle redigere i kerne-logikken.
+                  </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row gy-4 mt-4">
+            <div class="col-lg-4">
+                <div class="portfolio-info">
+                  <h3>Projektinformation</h3>
+                  <ul>
+                    <li><strong>Kategori</strong>: Avanceret Automatisering</li>
+                    <li><strong>Teknologier</strong>: Ansible, Python, PowerShell, Jinja2, YAML, WSL</li>
+                    <li><strong>Projekt Dato</strong>: December, 2025</li>
+                  </ul>
+                </div>
+      
+                <div class="portfolio-info mt-4">
+                  <h3>Kernekompetencer i Projektet</h3>
+                  <ul>
+                    <li><strong>Ansible Playbook Design:</strong> Udvikling af komplekse, interaktive playbooks med `vars_prompt`.</li>
+                    <li><strong>Template-generering:</strong> Dynamisk generering af konfigurationsfiler (YAML) vha. Jinja2-skabeloner.</li>
+                    <li><strong>Scripting & Integration:</strong> Integration af Python og PowerShell til at håndtere opgaver, hvor Ansible-moduler kom til kort.</li>
+                    <li><strong>Fejlsøgning på Tværs af Systemer:</strong> Dybdegående fejlsøgning af WSL-netværk (ICS), Ansible-versionering, og WinRM-autentificering.</li>
+                    <li><strong>Arkitektur:</strong> Design af et genbrugeligt "Project Generator"-mønster i stedet for en statisk løsning.</li>
+                  </ul>
+                </div>
+              </div>
+
+            <div class="col-lg-8">
+                <div class="portfolio-description">
+                    <h2>Arkitektur & Design</h2>
+                    <p>
+                        Løsningen består af en 3-faset raket, der guider brugeren fra konfiguration til færdig-udrullet maskine. Nedenstående diagrammer illustrerer workflowet og den overordnede topologi.
+                    </p>
+                    <div class="mermaid-diagram-container" style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
+                        <h5 class="text-center">Workflow Diagram</h5>
+                        <pre class="mermaid" style="text-align: center;">
+flowchart TB
+    %% --- Anchor nodes (styrer kolonne-layout) ---
+    X1["Fase 1"] --> X2["Fase 2"] --> X3["Fase 3"]
+
+    %% --- KOLONNE 1 ---
+    X1 --> F1["1. Generer Projekt"]
+    F1 --> A1["Start: generate_project.yml"] --> A2["Indsaml data (prompts)"] --> A3["Opret mapper"] --> A4["Generer config fra templates"] --> A5["Resultat: Nyt, unikt projekt"]
+
+    %% --- KOLONNE 2 ---
+    X2 --> F2["2. Provisioner VM'er"]
+    F2 --> B1["Start: create_control_nodes.yml"] --> B2["Læs config"] --> B3["Loop: Klon, Tag, Start"] --> B4["Resultat: VM'er kører"]
+
+    %% --- KOLONNE 3 ---
+    X3 --> F3["3. Konfigurer VM'er"]
+    F3 --> C1["Start: configure_control_nodes.yml"] --> C2["Forbind via WinRM"] --> C3["Installer Features (WSL)"] --> C4["Resultat: Klargjorte kontrolnoder"]
+                        </pre>
+                    </div>
+                    <div class="mermaid-diagram-container mt-4" style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
+                        <h5 class="text-center">Topologi Diagram</h5>
+                        <pre class="mermaid" style="text-align: center;">
+graph LR
+    subgraph "Ansible generator"
+        A("Operatør i WSL")
+    end
+
+    subgraph "Datacenter"
+        V("VPN Gateway")
+        subgraph "Proxmox Cluster"
+            PVE1["PVE1"]
+            PVE2["PVE2"]
+            PVE3["PVE3"]
+        end
+        subgraph "Nye Windows Klienter"
+            W1["Klient 1"]
+            W2["Klient 2"]
+        end
+    end
+    
+    A -- "OpenVPN" --> V
+    V -- "Trin 1: Proxmox API (8006)" --> PVE1
+    PVE1 -- "Kloner Golden Image til" --> W1
+    PVE2 -- "Kloner Golden Image til" --> W2
+    V -- "Trin 2: WinRM (5985)" --> W1
+    V -- "Trin 2: WinRM (5985)" --> W2
+                        </pre>
+                    </div>
+                </div>
+              </div>
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="copyright-box">
+            <p class="copyright">&copy; Copyright <strong>Laszlo S</strong>. All Rights Reserved</p>
+            <div class="credits">
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script>mermaid.initialize({startOnLoad:true});</script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- Security -->
+  <script src="assets/js/security.js"></script>
+</body>
+
+</html>

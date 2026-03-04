@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /
+
+# Blokerer alle søgemaskiner fra at indeksere siden.
+# Fjern linjerne ovenfor og erstat med nedenstående hvis du vil tillade indeksering:
+# User-agent: *
+# Allow: /

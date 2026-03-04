@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Portfolio - Test & Fejlsøgning</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    body, p, h1, h2, h3, h4, h5, li, span, code, pre { user-select: none; -webkit-user-select: none; }
+
+    .badge-severity { font-size: 0.7rem; padding: 3px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+    .badge-critical { background-color: #dc3545; color: #fff; }
+    .badge-high     { background-color: #fd7e14; color: #fff; }
+    .badge-medium   { background-color: #ffc107; color: #000; }
+
+    .badge-tech { font-size: 0.7rem; padding: 3px 8px; border-radius: 3px; background-color: #1e3a5f; color: #7ecfff; font-weight: 500; margin: 2px; display: inline-block; }
+
+    .accordion-button:not(.collapsed) { background-color: #1a2e46; color: #fff; }
+    .accordion-button:not(.collapsed)::after { filter: brightness(0) invert(1); }
+    .accordion-button { font-weight: 600; }
+
+    .case-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; align-items: center; }
+
+    .analysis-step { border-left: 3px solid #0d6efd; padding-left: 12px; margin-bottom: 10px; }
+    .analysis-step.root-cause { border-color: #dc3545; }
+    .analysis-step.solved { border-color: #198754; }
+
+    .accordion-body code { background-color: #1e2a3b; color: #7ecfff; padding: 1px 5px; border-radius: 3px; font-size: 0.85em; }
+
+    .accordion-body pre { background-color: #1a2535; color: #c9d1d9; padding: 12px 16px; border-radius: 5px; font-size: 0.82em; overflow-x: auto; border-left: 3px solid #0d6efd; }
+
+    .section-divider { border: 0; height: 2px; background: linear-gradient(to right, #0d6efd, transparent); margin: 3rem 0 2rem; }
+
+    .outcome-box { background-color: #0d2b0d; border: 1px solid #198754; border-radius: 5px; padding: 12px 16px; margin-top: 12px; }
+    .outcome-box strong { color: #4caf50; }
+
+    .incident-box { background-color: #2b0d0d; border: 1px solid #dc3545; border-radius: 5px; padding: 12px 16px; margin-top: 12px; }
+    .incident-box strong { color: #ff6b6b; }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <h1 class="logo"><a href="index.html">Portfolio Laszlo S</a></h1>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="index.html#about">Om Mig</a></li>
+          <li class="dropdown"><a href="#"><span>Projekter</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="portfolio-pixelwizards.html">Pixel Wizards Infrastruktur (H6)</a></li>
+              <li><a href="portfolio-ansible.html">Ansible Project Generator (H5)</a></li>
+              <li><a href="portfolio-cloudflix.html">CloudFlix Automatisering (H5)</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="portfolio-reports.html">Test &amp; Fejlsøgning</a></li>
+          <li><a class="nav-link" href="index.html#contact">Kontakt</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero hero-single route bg-image" style="background-image: url(assets/img/stock-3.jpg)">
+    <div class="overlay-mf"></div>
+    <div class="hero-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h2 class="hero-title mb-4">Testrapporter &amp; Fejlsøgnings-cases</h2>
+          <ol class="breadcrumb d-flex justify-content-center">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active">Test &amp; Fejlsøgning</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4 mb-2">
+          <div class="col-lg-12">
+            <div class="portfolio-description">
+              <h2>Fejlsøgnings-cases</h2>
+              <p>Dokumentation af komplekse tekniske udfordringer, der er identificeret og løst systematisk på tværs af Pixel Wizards-projektet og H5/H6-forløbet. Hvert case følger strukturen: <strong>Problem &rarr; Analyse &rarr; Rodårsag &rarr; Løsning</strong>.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion" id="troubleshootingAccordion">
+
+          <!-- CASE 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c1">
+                <span class="badge-severity badge-high me-2">HIGH</span>
+                Case #1 &nbsp;&ndash;&nbsp; iLO/IPMI Connection Failure via ipmitool
+              </button>
+            </h2>
+            <div id="c1" class="accordion-collapse collapse" data-bs-parent="#troubleshootingAccordion">
+              <div class="accordion-body">
+                <div class="case-meta">
+                  <span class="badge-tech">Proxmox</span><span class="badge-tech">iLO / IPMI</span><span class="badge-tech">Linux Networking</span><span class="badge-tech">Layer 2</span>
+                  <span>Projekt: Pixel Wizards (H6)</span>
+                </div>
+                <div class="analysis-step">
+                  <strong>Problem:</strong> Et automatiseringsscript kunne ikke tænde offline backup-serveren via iLO-interfacet. <code>ipmitool</code> fejlede med <code>Error: Unable to establish IPMI v2 / RMCP+ session</code>.
+                </div>
+                <strong>Fejlsøgning:</strong>
+                <div class="analysis-step mt-2">
+                  <strong>Trin 1:</strong> Netværksverifikation via <code>nc -uvz &lt;ilo-ip&gt; 623</code> bekræftede at UDP port 623 var åben &mdash; L3/L4 firewall-blokering udelukket.
+                </div>
+                <div class="analysis-step">
+                  <strong>Trin 2:</strong> En <code>curl</code>-kommando mod iLO-interfacet returnerede <code>No route to host</code> &mdash; lokalt routing-problem på Proxmox-hosten.
+                </div>
+                <div class="analysis-step root-cause">
+                  <strong>Trin 3 &ndash; Rodårsag:</strong> <code>ip neigh show</code> viste at ARP-opslag fejlede med <code>FAILED</code> &mdash; isoleret til Layer 2. Gennemgang afslørede en konflikt: både en VLAN-aware bridge (<code>vmbr2</code>) og et manuelt subinterface (<code>vmbr2.250</code>) eksisterede, hvilket brød VLAN-tagningen.
+                </div>
+                <div class="analysis-step solved">
+                  <strong>Løsning:</strong> <code>vmbr2.250</code> subinterface slettet. IP-adresse tildelt direkte til VLAN-aware bridge. Manglende VLAN-konfiguration på fysisk switch-port identificeret og rettet.
+                </div>
+                <div class="outcome-box"><strong>Resultat:</strong> IPMI-session etableres korrekt. Air-gap backup-scriptet kan tænde og slukke offline-serveren automatisk.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CASE 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2">
+                <span class="badge-severity badge-critical me-2">CRITICAL</span>
+                Case #2 &nbsp;&ndash;&nbsp; DHCP Failover: Klienter Modtager Ingen IP-adresse
+              </button>
+            </h2>
+            <div id="c2" class="accordion-collapse collapse" data-bs-parent="#troubleshootingAccordion">
+              <div class="accordion-body">
+                <div class="case-meta">
+                  <span class="badge-tech">Windows Server</span><span class="badge-tech">DHCP Failover</span><span class="badge-tech">Active Directory</span><span class="badge-tech">PowerShell</span>
+                  <span>Projekt: Pixel Wizards (H6)</span>
+                </div>
+                <div class="analysis-step">
+                  <strong>Problem:</strong> Nyudrullede Windows-klient-VM'er modtog APIPA-adresser (<code>169.254.x.x</code>) i stedet for gyldige DHCP-leases.
+                </div>
+                <strong>Fejlsøgning:</strong>
+                <div class="analysis-step mt-2">
+                  <strong>Trin 1:</strong> DHCP-serverloggen viste at ingen <code>DHCP DISCOVER</code>-pakker nåede frem til serverne &mdash; problemet var server-side.
+                </div>
+                <div class="analysis-step root-cause">
+                  <strong>Trin 2 &ndash; Rodårsag 1:</strong> <code>Get-DhcpServerv4Binding</code> afslørede at DHCP-servicen <em>kun</em> lyttede på management-interfacet &mdash; ikke på klient-VLAN-interfacet.
+                </div>
+                <div class="analysis-step root-cause">
+                  <strong>Trin 3 &ndash; Rodårsag 2 (dybere):</strong> <code>Get-DhcpServerInDC</code> viste at serverne var autoriseret i AD med gamle, forkerte IP-adresser. Den forkerte AD-autorisering forhindrede korrekt interface-binding.
+<pre>
+# Kommando der afslørede fejlen:
+Get-DhcpServerInDC
+# Output viste gamle IP-adresser fra tidligere netværkssegment
+</pre>
+                </div>
+                <div class="analysis-step solved">
+                  <strong>Løsning:</strong>
+                  <ol class="mb-0 mt-1">
+                    <li>Forældede DHCP-objekter fjernet: <code>Remove-DhcpServerInDC</code></li>
+                    <li>Re-autoriseret med alle korrekte IP-adresser: <code>Add-DhcpServerInDC</code></li>
+                    <li>DHCP-service genstartet &mdash; bandt nu korrekt til begge interfaces.</li>
+                  </ol>
+                </div>
+                <div class="outcome-box"><strong>Resultat:</strong> DHCP Failover fungerer korrekt. Fuld redundans verificeret.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CASE 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3">
+                <span class="badge-severity badge-high me-2">HIGH</span>
+                Case #3 &nbsp;&ndash;&nbsp; Ansible: 401 Unauthorized mod Proxmox API
+              </button>
+            </h2>
+            <div id="c3" class="accordion-collapse collapse" data-bs-parent="#troubleshootingAccordion">
+              <div class="accordion-body">
+                <div class="case-meta">
+                  <span class="badge-tech">Ansible</span><span class="badge-tech">Proxmox API</span><span class="badge-tech">Python</span><span class="badge-tech">YAML</span>
+                  <span>Projekt: H5 + Pixel Wizards (H6)</span>
+                </div>
+                <div class="analysis-step">
+                  <strong>Problem:</strong> Playbooks fejlede konsekvent med <code>401 Unauthorized</code> mod Proxmox API, selv med gyldigt token verificeret via <code>curl</code>.
+                </div>
+                <strong>Kæde af overlappende fejl:</strong>
+                <div class="analysis-step root-cause mt-2">
+                  <strong>Fejl 1 &ndash; Privilege Separation:</strong> API-tokenet var oprettet med "Privilege Separation" aktiveret &mdash; forhindrede token i at arve <code>root@pam</code> rettigheder.
+                </div>
+                <div class="analysis-step root-cause">
+                  <strong>Fejl 2 &ndash; Token Format:</strong> <code>community.proxmox</code>-modulet forventer det korte token-navn, ikke det fulde ID. Modulet bygger selv det fulde ID internt.
+<pre>
+# FORKERT – 401:
+api_token_id: "root@pam!ansible2"
+
+# KORREKT:
+api_token_id: "ansible2"
+</pre>
+                </div>
+                <div class="analysis-step root-cause">
+                  <strong>Fejl 3 &ndash; Variabelnavne:</strong> Playbooks og templates brugte forskellige navne for samme secret, hvilket resulterede i tomme variabler ved runtime.
+                </div>
+                <div class="analysis-step root-cause">
+                  <strong>Fejl 4 &ndash; vars_prompt:</strong> En <code>vars_prompt</code>-sektion tvang manuel indtastning med hardcoded gammelt token som default &mdash; overskrev korrekte værdier fra <code>group_vars/all.yml</code>.
+                </div>
+                <div class="analysis-step root-cause">
+                  <strong>Fejl 5 &ndash; Inventory script:</strong> <code>dynamic_inventory.py</code> manglede <code>import os</code> og havde hardcoded gammelt API secret som fallback.
+                </div>
+                <div class="analysis-step solved">
+                  <strong>Løsning:</strong> Alle fem punkter rettet systematisk. Playbook kørte derefter fejlfrit.
+                </div>
+                <div class="outcome-box"><strong>Resultat:</strong> Ansible deployede succesfuldt 4 Windows VM'er via Proxmox API &mdash; klonet, tagget og startet automatisk.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CASE 4 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4">
+                <span class="badge-severity badge-high me-2">HIGH</span>
+                Case #4 &nbsp;&ndash;&nbsp; WSL2 Kan Ikke Tilgå Internt VPN-netværk
+              </button>
+            </h2>
+            <div id="c4" class="accordion-collapse collapse" data-bs-parent="#troubleshootingAccordion">
+              <div class="accordion-body">
+                <div class="case-meta">
+                  <span class="badge-tech">WSL2</span><span class="badge-tech">Hyper-V</span><span class="badge-tech">VPN / ICS</span><span class="badge-tech">Windows Networking</span>
+                  <span>Projekt: Ansible Project Generator (H5)</span>
+                </div>
+                <div class="analysis-step">
+                  <strong>Problem:</strong> WSL2 fik APIPA-lignende IP og kunne ikke tilgå interne VPN-ressourcer eller resolvere interne DNS-navne.
+                </div>
+                <strong>Fejlsøgning:</strong>
+                <div class="analysis-step mt-2">
+                  <strong>Trin 1:</strong> Midlertidig offentlig DNS i <code>/etc/resolv.conf</code> bekræftede at Internetforbindelsen i WSL var intakt &mdash; problemet var specifikt VPN-routing.
+                </div>
+                <div class="analysis-step">
+                  <strong>Trin 2:</strong> En eksisterende <code>~/.wsl-config</code> i Linux-hjemmemappen identificeret som irrelevant (Dell-systemværktøj).
+                </div>
+                <div class="analysis-step root-cause">
+                  <strong>Rodårsag:</strong> ICS var konfigureret til at dele <strong>Ethernet</strong>-adapteren &mdash; ikke <strong>VPN</strong>-adapteren. WSL fik internet, men ingen adgang til det interne VPN-netværk.
+                </div>
+                <div class="analysis-step solved">
+                  <strong>Løsning:</strong> ICS deaktiveret på Ethernet-adapter, aktiveret på VPN-adapter med <code>vEthernet (Default Switch)</code> som destination. WSL genstartet.
+<pre>
+# C:\Users\&lt;bruger&gt;\.wslconfig
+[wsl2]
+networkingMode=bridged
+vmSwitch=Default Switch
+</pre>
+                </div>
+                <div class="outcome-box"><strong>Resultat:</strong> WSL2 tilgår fuldt ud både internet og interne VPN-ressourcer inkl. Proxmox API og intern DNS.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CASE 5 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c5">
+                <span class="badge-severity badge-critical me-2">CRITICAL</span>
+                Case #5 &nbsp;&ndash;&nbsp; Proxmox Cluster: No Quorum &ndash; Ingen Ændringer Mulige
+              </button>
+            </h2>
+            <div id="c5" class="accordion-collapse collapse" data-bs-parent="#troubleshootingAccordion">
+              <div class="accordion-body">
+                <div class="case-meta">
+                  <span class="badge-tech">Proxmox VE</span><span class="badge-tech">Corosync</span><span class="badge-tech">Cluster Networking</span><span class="badge-tech">Firewall</span>
+                  <span>Projekt: Pixel Wizards (H6)</span>
+                </div>
+                <div class="analysis-step">
+                  <strong>Problem:</strong> <code>pvecm status</code> viste <code>Quorate: No</code>. Ingen VM'er, API-tokens eller ændringer kunne oprettes &mdash; alt fejlede med <code>no quorum!</code>.
+                </div>
+                <strong>Fejlsøgning:</strong>
+                <div class="analysis-step mt-2">
+                  <strong>Trin 1:</strong> Ping-test mellem alle noder &mdash; fuld ICMP-konnektivitet bekræftet. Problemet var ikke grundlæggende netværksforbindelse.
+                </div>
+                <div class="analysis-step root-cause">
+                  <strong>Rodårsag:</strong> Corosync kommunikerer via <strong>UDP port 5404 og 5405</strong>. En ekstern firewall blokerede disse porte mens normal ICMP og TCP gik igennem.
+                </div>
+                <div class="analysis-step solved">
+                  <strong>Løsning:</strong> UDP port 5404 og 5405 åbnet i den fysiske netværksfirewall for Proxmox-nodernes Corosync-IP-adresser. Quorum genetableret umiddelbart.
+                </div>
+                <div class="outcome-box"><strong>Resultat:</strong> Cluster quorum genetableret. Alle cluster-operationer og API-token-oprettelse fungerer.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CASE 6 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c6">
+                <span class="badge-severity badge-critical me-2">CRITICAL</span>
+                Case #6 &nbsp;&ndash;&nbsp; Ceph: OSD Failure &amp; Monitor Instabilitet (437 Slow Ops)
+              </button>
+            </h2>
+            <div id="c6" class="accordion-collapse collapse" data-bs-parent="#troubleshootingAccordion">
+              <div class="accordion-body">
+                <div class="case-meta">
+                  <span class="badge-tech">Ceph</span><span class="badge-tech">Proxmox VE</span><span class="badge-tech">OSD</span><span class="badge-tech">Storage Cluster</span>
+                  <span>Projekt: Pixel Wizards (H6)</span>
+                </div>
+                <div class="analysis-step">
+                  <strong>Problem:</strong> Ceph-monitoren rapporterede en eskalerende mængde "slow ops" &mdash; fra 39 til 437 på under 3 minutter. Monitor-rollen skiftede gentagne gange: <code>leader &rarr; electing &rarr; probing</code>.
+                </div>
+                <strong>Loganalyse:</strong>
+<pre>
+15:30:01 - reporting 39 slow ops   (oldest: osd_failure osd.14)
+15:31:56 - reporting 232 slow ops
+15:32:11 - reporting 437 slow ops  → monitor skifter til 'electing'
+15:32:06 - reporting 362 slow ops  → 'electing'
+15:33:06 - reporting 1 slow ops    (osd_alive: want up_thru 854)
+</pre>
+                <div class="analysis-step mt-2">
+                  <strong>Analyse:</strong> OSD.14 fejlede og svarede ikke inden for timeout. Dette udløste en kædereaktion: alle øvrige OSD'er sendte simultant <code>osd_failure</code>-rapporter til monitoren, som overbelastede monitor-processen og resulterede i gentagne leder-valg.
+                </div>
+                <div class="analysis-step root-cause">
+                  <strong>Rodårsag:</strong> OSD.14 gik offline. Den hurtige eskalering af slow ops indikerede yderligere at Ceph-monitor-netværket og storage-netværket ikke var tilstrækkeligt adskilt, hvilket forstærkede effekten.
+                </div>
+                <div class="analysis-step solved">
+                  <strong>Håndtering:</strong> OSD markeret <code>out</code> &mdash; Ceph redistributerede data til de resterende OSD'er. Storage-netværk verificeret. Clusteret genvandt <code>HEALTH_OK</code> efter re-distribution.
+                </div>
+                <div class="outcome-box"><strong>Resultat:</strong> Cluster restabiliseret. Data-integritet opretholdt via replikering. Hændelsen dokumenterede vigtigheden af et dedikeret Ceph-netværk adskilt fra Corosync.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CASE 7 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c7">
+                <span class="badge-severity badge-critical me-2">CRITICAL</span>
+                Case #7 &nbsp;&ndash;&nbsp; Forensisk Analyse: VM Disk Failure &amp; Bevis for Ekstern Årsag
+              </button>
+            </h2>
+            <div id="c7" class="accordion-collapse collapse" data-bs-parent="#troubleshootingAccordion">
+              <div class="accordion-body">
+                <div class="case-meta">
+                  <span class="badge-tech">Proxmox VE</span><span class="badge-tech">LVM Storage</span><span class="badge-tech">HA Cluster</span><span class="badge-tech">Log Forensics</span>
+                  <span>Projekt: Pixel Wizards (H6) &ndash; 11. februar 2026</span>
+                </div>
+                <div class="analysis-step">
+                  <strong>Problem:</strong> Domain Controller VM'en fejlede totalt &mdash; LVM disk-volumes var forsvundet. Fejl: <code>no such logical volume pve/vm-disk-0</code>. Ansible-automation (kørende kl. 02:00&ndash;04:00) blev mistænkt som årsag.
+                </div>
+                <strong>Forensisk tidslinje:</strong>
+<pre>
+02:56 - 03:17   Ansible kører: kloner template til 4 nye VMs. ALLE operationer OK.
+04:00 - 10:00   4 succesfulde backup-jobs kører. System stabilt.
+10:49 - 10:50   SSH root-login fra ekstern host (~1 minuts session)
+11:05           VM stoppes manuelt via HA cluster resource manager
+~11:30-12:30    LVM disk-volumes forsvinder
+12:38           Første fejl: "no such logical volume"
+12:38 - 13:00   12+ fejlede genstartsforsøg
+~15:00          Laszlo gendanner VM fra PBS-backup
+</pre>
+                <div class="analysis-step mt-2">
+                  <strong>Bevis 1 &ndash; Ansible var IKKE årsagen:</strong> 9 timers og 21 minutters forskel mellem Ansible-afslutning (03:17) og første fejl (12:38). 4 succesfulde backup-jobs i mellemtiden.
+                </div>
+                <div class="analysis-step">
+                  <strong>Bevis 2 &ndash; Systematisk backup-udelukkelse:</strong> Gennemgang af alle 6 backup-jobs viste at specifikke VM'er var fraværende fra samtlige backup-jobs &mdash; fjernelsen skete <em>inden</em> Ansible-arbejdet.
+                </div>
+                <div class="analysis-step root-cause">
+                  <strong>Rodårsag (LVM):</strong> LVM logical volumes forsvinder kun ved: <code>lvremove</code>-kommando, VG-korruption, eller konfigurationsændring. Da kun denne ene VM var påvirket peger analysen mod manuel sletning.
+                </div>
+                <div class="analysis-step solved">
+                  <strong>Gendannelse:</strong> VM gendannet fra PBS-backup til ny VMID på Ceph-storage:
+<pre>
+qmrestore online-backup:backup/vm/&lt;id&gt;/&lt;timestamp&gt; &lt;new-vmid&gt; --storage CephPool-Pixel
+# restore image complete (75 GB genoprettet med intakt data)
+</pre>
+                </div>
+                <div class="incident-box"><strong>Konklusion:</strong> Den tekniske analyse udelukker Ansible-automatiseringen som årsag. Tidsgabet, de 4 succesfulde backup-jobs og den systematiske backup-udelukkelse dokumenterer at fejlen ikke opstod som følge af mit arbejde.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CASE 8 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c8">
+                <span class="badge-severity badge-medium me-2">MEDIUM</span>
+                Case #8 &nbsp;&ndash;&nbsp; Ansible: Inventory Plugin "could not be verified"
+              </button>
+            </h2>
+            <div id="c8" class="accordion-collapse collapse" data-bs-parent="#troubleshootingAccordion">
+              <div class="accordion-body">
+                <div class="case-meta">
+                  <span class="badge-tech">Ansible</span><span class="badge-tech">community.proxmox</span><span class="badge-tech">Python</span><span class="badge-tech">WSL2</span>
+                  <span>Projekt: Ansible Project Generator (H5)</span>
+                </div>
+                <div class="analysis-step">
+                  <strong>Problem:</strong> <code>ansible-inventory -i inventory.yml</code> fejlede med <code>inventory source could not be verified by inventory plugin</code> &mdash; selv mens <code>curl</code> mod samme endpoint fungerede perfekt.
+                </div>
+                <strong>Systematisk debugging:</strong>
+                <div class="analysis-step mt-2">
+                  <strong>Test 1 &ndash; Python proxmoxer direkte:</strong> Et test-script bekræftede at <code>proxmoxer</code>-biblioteket kommunikerede korrekt med Proxmox API &mdash; problemet var specifikt i Ansible inventory plugin-laget.
+                </div>
+                <div class="analysis-step">
+                  <strong>Test 2 &ndash; Minimal inventory:</strong> Inventory uden compose/filter-blokke fungerede &mdash; fejlen opstod i de avancerede blokke der forsøgte at hente guest agent-data, som ikke var tilgængelig på alle VMs.
+                </div>
+                <div class="analysis-step root-cause">
+                  <strong>Rodårsag:</strong> <code>community.proxmox</code>-pluginnen håndterede ikke gracefully at guest-agent-interfacet er inaktivt på visse VMs &mdash; returnerede fejl i stedet for null/tom værdi.
+                </div>
+                <div class="analysis-step solved">
+                  <strong>Løsning:</strong> Inventory-plugin erstattet med et custom <code>dynamic_inventory.py</code> Python-script med fuld kontrol over null-håndtering og fejltolerance.
+                </div>
+                <div class="outcome-box"><strong>Resultat:</strong> Dynamic inventory fungerer stabilt på tværs af alle VM-typer uanset guest agent-status.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CASE 9 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c9">
+                <span class="badge-severity badge-medium me-2">MEDIUM</span>
+                Case #9 &nbsp;&ndash;&nbsp; Ansible Playbook: Kæde af YAML &amp; vars_prompt Fejl
+              </button>
+            </h2>
+            <div id="c9" class="accordion-collapse collapse" data-bs-parent="#troubleshootingAccordion">
+              <div class="accordion-body">
+                <div class="case-meta">
+                  <span class="badge-tech">Ansible</span><span class="badge-tech">YAML</span><span class="badge-tech">vars_prompt</span>
+                  <span>Projekt: Ansible Project Generator (H5)</span>
+                </div>
+                <div class="analysis-step">
+                  <strong>Problem:</strong> <code>generate_project.yml</code> fejlede med multiple tilsyneladende uafhængige fejl der dukkede op ét ad gangen.
+                </div>
+                <strong>Fejlene i rækkefølge:</strong>
+                <div class="analysis-step root-cause mt-2">
+                  <strong>Fejl 1:</strong> <code>Invalid vars_prompt data structure, found unsupported key 'regex'</code> &mdash; Ansible-versionen understøttede ikke <code>regex:</code> og <code>confirm:</code> i vars_prompt. Udkommenteret.
+                </div>
+                <div class="analysis-step root-cause">
+                  <strong>Fejl 2:</strong> <code>'vm_user_1' is undefined</code> &mdash; Variabelreference i prompt-teksten på et tidspunkt hvor variablen ikke eksisterede endnu. Reference fjernet fra teksten.
+                </div>
+                <div class="analysis-step root-cause">
+                  <strong>Fejl 3:</strong> <code>Invalid variable file contents</code> &mdash; YAML-syntaksfejl efter manuel redigering. En bindestreg (<code>-</code>) foran en udkommenteret blok brød YAML-parsingen. Hele blokken inkl. listen-elementet skal udkommenteres samlet.
+                </div>
+                <div class="analysis-step solved">
+                  <strong>Løsning:</strong> Sekventiel rettelse: kør playbook &rarr; ret fejl &rarr; kør igen. YAML-fejl er chainede.
+                </div>
+                <div class="outcome-box"><strong>Resultat:</strong> Playbook kører fejlfrit og starter interaktive prompts korrekt.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CASE 10 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c10">
+                <span class="badge-severity badge-high me-2">HIGH</span>
+                Case #10 &nbsp;&ndash;&nbsp; DFS Replikering: Synkronisering Virker Ikke
+              </button>
+            </h2>
+            <div id="c10" class="accordion-collapse collapse" data-bs-parent="#troubleshootingAccordion">
+              <div class="accordion-body">
+                <div class="case-meta">
+                  <span class="badge-tech">Windows Server</span><span class="badge-tech">DFS-R</span><span class="badge-tech">Active Directory</span><span class="badge-tech">PowerShell</span>
+                  <span>Projekt: CloudFlix (H5) + Pixel Wizards (H6)</span>
+                </div>
+                <div class="analysis-step">
+                  <strong>Problem:</strong> DFS Replikering synkroniserede ikke data mellem filserverne. Filer oprettet på én server dukkede ikke op på den anden.
+                </div>
+                <strong>Fejlsøgning:</strong>
+                <div class="analysis-step mt-2">
+                  <strong>Trin 1:</strong> <code>Get-DfsrState</code> og Event Viewer bekræftede at replikeringsgruppen var konfigureret korrekt men health-status viste fejl.
+                </div>
+                <div class="analysis-step root-cause">
+                  <strong>Rodårsag:</strong> Replikeringsgruppen var ikke korrekt initialiseret. Den første synkronisering kræver at én server markeres som "primary member". Dette trin var overset i det automatiserede setup-script.
+                </div>
+                <div class="analysis-step solved">
+                  <strong>Løsning:</strong> Replikeringsgruppe re-konfigureret med eksplicit primary member. Initial synkronisering startet manuelt. ABE verificeret aktivt på namespace.
+                </div>
+                <div class="outcome-box"><strong>Resultat:</strong> DFS replikering fungerer. Namespace tilgængeligt og transparent for brugere på begge filservere.</div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- END ACCORDION FEJLSØGNING -->
+
+
+        <!-- TESTRAPPORTER -->
+        <hr class="section-divider">
+
+        <div class="row gy-4 mb-2">
+          <div class="col-lg-12">
+            <div class="portfolio-description">
+              <h2>Testrapporter</h2>
+              <p>Udvalgte testcases udført for at validere systemets funktionalitet og sikkerhed mod de opstillede krav.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion" id="testReportAccordion">
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#r1">
+                <strong>K-40</strong> &nbsp;&ndash;&nbsp; Adgang til Backup VLAN
+              </button>
+            </h2>
+            <div id="r1" class="accordion-collapse collapse" data-bs-parent="#testReportAccordion">
+              <div class="accordion-body">
+                <div class="case-meta"><span class="badge-tech">Firewall</span><span class="badge-tech">VLAN Segmentering</span></div>
+                <strong>Formål:</strong> Verificere at backup-serverne i VLAN 40 kun er tilgængelige fra specificerede administrations-VLANs.<br><br>
+                <strong>Test Trin:</strong>
+                <ol>
+                  <li><strong>Positiv Test:</strong> <code>ping</code> og HTTPS mod backup-serveren fra klient-VLAN og server-VLAN.</li>
+                  <li><strong>Negativ Test:</strong> Samme tests fra gæste-VLAN &mdash; forventet timeout.</li>
+                </ol>
+                <strong>Resultat:</strong> Positiv test lykkedes. Negativ test timede ud. Firewall-politik fungerer korrekt.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#r2">
+                <strong>K-153</strong> &nbsp;&ndash;&nbsp; Verifikation af Offline Backup &amp; Air-Gap Proces
+              </button>
+            </h2>
+            <div id="r2" class="accordion-collapse collapse" data-bs-parent="#testReportAccordion">
+              <div class="accordion-body">
+                <div class="case-meta"><span class="badge-tech">PBS</span><span class="badge-tech">iLO / IPMI</span><span class="badge-tech">Bash Scripting</span></div>
+                <strong>Formål:</strong> Verificere den fuldautomatiserede Air-Gap synkroniseringsproces fra online til offline backup-server.<br><br>
+                <strong>Test Trin:</strong>
+                <ol>
+                  <li><strong>Hardware-verifikation:</strong> Login på iLO for at bekræfte servermodel, hostname og IP-adresse.</li>
+                  <li><strong>Funktionel Test:</strong> Manuel eksekvering af <code>sync_online_til_offline_backup.sh</code> på online-serveren.</li>
+                </ol>
+                <strong>Forventet Resultat:</strong> Scriptet tænder offline-serveren via IPMI, synkroniserer snapshots og slukker serveren igen.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#r3">
+                <strong>K-48 &amp; K-49</strong> &nbsp;&ndash;&nbsp; Fjernadministration &amp; Klientklargøring via Template
+              </button>
+            </h2>
+            <div id="r3" class="accordion-collapse collapse" data-bs-parent="#testReportAccordion">
+              <div class="accordion-body">
+                <div class="case-meta"><span class="badge-tech">WinRM</span><span class="badge-tech">OpenSSH</span><span class="badge-tech">Ansible</span><span class="badge-tech">PowerShell</span></div>
+                <strong>Formål:</strong> Verificere at klienter fra hærdet template er korrekt forberedt til Ansible-fjernadministration.<br><br>
+                <strong>Test Trin:</strong>
+                <ol>
+                  <li><strong>Bloatware-fjernelse (K-49):</strong> <code>Get-AppxPackage -Name "*Xbox*"</code> skal returnere tomt resultat.</li>
+                  <li><strong>UAC Remote Policy (K-48.3):</strong> <code>LocalAccountTokenFilterPolicy</code> skal være sat til <code>1</code>.</li>
+                  <li><strong>Port-verifikation (K-48):</strong> <code>Test-NetConnection</code> bekræfter TCP 5985 (WinRM) og TCP 22 (SSH) er åbne.</li>
+                </ol>
+                <strong>Resultat:</strong> Alle kommandoer returnerede korrekte værdier. Template klargør klienter korrekt til Ansible.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#r4">
+                <strong>K-55</strong> &nbsp;&ndash;&nbsp; DHCP Failover Funktionstest
+              </button>
+            </h2>
+            <div id="r4" class="accordion-collapse collapse" data-bs-parent="#testReportAccordion">
+              <div class="accordion-body">
+                <div class="case-meta"><span class="badge-tech">DHCP</span><span class="badge-tech">Failover</span><span class="badge-tech">PowerShell</span></div>
+                <strong>Formål:</strong> Verificere at DHCP-failover fungerer og klienter modtager IP selv når én server er nede.<br><br>
+                <strong>Test Trin:</strong>
+                <ol>
+                  <li>Verificer aktiv failover: <code>Get-DhcpServerv4Failover</code></li>
+                  <li>Stop DHCP-service på primær server: <code>Stop-Service dhcpserver</code></li>
+                  <li>Forny IP-lease på klient: <code>ipconfig /renew</code></li>
+                  <li>Verificer lease fra sekundær server. Start primær og verificer re-synk.</li>
+                </ol>
+                <strong>Resultat:</strong> Klienten modtog IP-adresse fra sekundær DC inden for failover-timeout. Redundansen verificeret.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#r5">
+                <strong>K-72</strong> &nbsp;&ndash;&nbsp; Ansible: Automatiseret VM Deployment End-to-End
+              </button>
+            </h2>
+            <div id="r5" class="accordion-collapse collapse" data-bs-parent="#testReportAccordion">
+              <div class="accordion-body">
+                <div class="case-meta"><span class="badge-tech">Ansible</span><span class="badge-tech">Proxmox API</span><span class="badge-tech">WinRM</span></div>
+                <strong>Formål:</strong> Verificere at den komplette Ansible deployment-pipeline fungerer fra template-kloning til konfigureret VM.<br><br>
+                <strong>Test Trin:</strong>
+                <ol>
+                  <li>Kør <code>generate_project.yml</code> og angiv VM-parametre via interaktive prompts.</li>
+                  <li>Kør <code>create_control_nodes.yml</code> &mdash; verificer VM'er klones og startes i Proxmox.</li>
+                  <li>Verificer VM-tags er sat korrekt (<code>windows, control-node</code>).</li>
+                  <li>Kør <code>configure_control_nodes.yml</code> &mdash; verificer WSL-installation via WinRM.</li>
+                  <li>Test Ansible-ping mod nyudrullet VM &mdash; forventet: <code>pong</code>.</li>
+                </ol>
+                <strong>Resultat:</strong> VM'er klonet, startet, tagget og konfigureret fuldt automatisk. Ping returnerede <code>pong</code>.
+              </div>
+            </div>
+          </div>
+
+        </div><!-- END TESTRAPPORTER -->
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="copyright-box">
+            <p class="copyright">&copy; Copyright <strong>Laszlo S</strong>. All Rights Reserved</p>
+            <div class="credits">Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/security.js"></script>
+
+</body>
+</html>

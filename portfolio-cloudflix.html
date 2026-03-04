@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>body, p, h1, h2, h3, h4, h5, li, span, code, pre { user-select: none; -webkit-user-select: none; }</style>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Portfolio - CloudFlix A/S Automatisering</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <h1 class="logo"><a href="index.html">Portfolio Laszlo S</a></h1>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="index.html#about">Om Mig</a></li>
+          <li class="dropdown"><a href="#"><span>Projekter</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="portfolio-pixelwizards.html">Pixel Wizards Infrastruktur (H6)</a></li>
+              <li><a href="portfolio-ansible.html">Ansible Project Generator (H5)</a></li>
+              <li><a href="portfolio-cloudflix.html">CloudFlix Automatisering (H5)</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="portfolio-reports.html">Test & Fejlsøgning</a></li>
+          <li><a class="nav-link" href="index.html#contact">Kontakt</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <div class="hero hero-single route bg-image" style="background-image: url(assets/img/stock-3.jpg)">
+    <div class="overlay-mf"></div>
+    <div class="hero-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h2 class="hero-title mb-4">CloudFlix A/S (H5)</h2>
+          <ol class="breadcrumb d-flex justify-content-center">
+            <li class="breadcrumb-item">
+              <a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Project Details</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+          <div class="col-lg-12">
+            <div class="portfolio-description">
+              <h2>Projektoversigt & Formål</h2>
+              <p>
+                For H5-projektet "CloudFlix A/S" var opgaven at designe og implementere kernen af en ny IT-infrastruktur for en ny afdeling i Aarhus. Hovedfokus var at skabe en skalerbar og vedligeholdelsesvenlig løsning, hvor manuelle processer blev elimineret gennem omfattende automatisering med PowerShell. Dette sikrede en hurtig, ensartet og fejlfri opsætning af centrale server-roller.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row gy-4 mt-4">
+            <div class="col-lg-4">
+                <div class="portfolio-info">
+                  <h3>Projektinformation</h3>
+                  <ul>
+                    <li><strong>Kategori</strong>: Infrastruktur & Automatisering</li>
+                    <li><strong>Teknologier</strong>: PowerShell, Active Directory, DFS, Windows Server</li>
+                    <li><strong>Projekt Dato</strong>: August - December, 2025</li>
+                  </ul>
+                </div>
+      
+                <div class="portfolio-info mt-4">
+                  <h3>Kernekompetencer i Projektet</h3>
+                  <ul>
+                    <li><strong>PowerShell Scripting:</strong> Udvikling af idempotente scripts til fuldautomatiseret server-konfiguration.</li>
+                    <li><strong>Active Directory:</strong> Design og automatiseret oprettelse af OU-struktur, grupper og brugere.</li>
+                    <li><strong>Distributed File System (DFS):</strong> Automatiseret opsætning af DFS Namespace og Replikering for redundant fildeling.</li>
+                    <li><strong>Windows Server Administration:</strong> Dybdegående konfiguration af server-roller og -features.</li>
+                  </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="portfolio-description">
+                    <h2>Arkitektur & Design</h2>
+                    <p>
+                        Løsningens fundament var en velstruktureret Active Directory, der adskilte afdelinger, brugere, grupper og computere logisk for at lette administration og rettighedsstyring. Nedenstående diagram illustrerer OU-strukturen for Aarhus-sitet.
+                    </p>
+                    <div class="mermaid-diagram-container" style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
+                        <h5 class="text-center">Active Directory OU-Struktur</h5>
+                        <pre class="mermaid" style="text-align: center;">
+graph TD
+    subgraph CloudFlix.local
+        A[OU=Aarhus_C]
+    end
+
+    A --> B[OU=Ledelse]
+    A --> C[OU=Salgsafdeling]
+    A --> D[OU=Indkobsafdeling]
+    A --> E[OU=Adminafd]
+    A --> F[OU=Personaleafdeling]
+    A --> G[OU=Okonomiafdeling]
+    A --> H[OU=IT-afdeling]
+
+    B --> B_Brugere[OU=Brugere]
+    B --> B_Grupper[OU=Grupper]
+
+    C --> C_Brugere[OU=Brugere]
+    C --> C_Grupper[OU=Grupper]
+    
+    H --> H_Brugere[OU=Brugere]
+    H --> H_Grupper[OU=Grupper]
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="portfolio-description mt-4">
+                    <h2>Implementering via PowerShell</h2>
+                    <p>Hele server-opsætningen blev kodificeret i to primære PowerShell-scripts:</p>
+                    <h5>1. Automatiseret Active Directory Setup (`AD_Setup_Aarhus.ps1`)</h5>
+                    <p>Dette script læser en foruddefineret struktur og opretter automatisk alle OU'er, sikkerhedsgrupper og brugere. Dette sikrer en hurtig og konsistent opsætning og minimerer risikoen for manuelle fejl.</p>
+                    <pre><code># Uddrag fra AD_Setup_Aarhus.ps1
+function New-AarhusUser {
+    param(
+        [string]$FullName,
+        [string]$SamAccountName,
+        # ... andre parametre
+    )
+    # ... logik til at oprette bruger i korrekt OU
+    New-ADUser @userParams
+    # ... logik til at tilføje bruger til grupper
+}</code></pre>
+
+                    <h5 class="mt-4">2. Automatiseret Filserver & DFS Setup (`FileServer_Setup_Aarhus.ps1`)</h5>
+                    <p>Et idempotent script der klargør to filservere til redundant drift. Scriptet håndterer installation af Windows Features (DFS), oprettelse af mappestruktur, tildeling af komplekse NTFS-rettigheder, opsætning af SMB-shares og fuld konfiguration af DFS Namespace og replikering.</p>
+                    <pre><code># Uddrag fra FileServer_Setup_Aarhus.ps1
+# Opretter DFS Namespace og tilføjer begge servere som targets
+New-DfsnRoot -Path $namespace -Type DomainV2 -EnableAccessBasedEnumeration $true
+New-DfsnRootTarget -Path $namespace -TargetPath "\\$fileServer01\Shares"
+New-DfsnRootTarget -Path $namespace -TargetPath "\\$fileServer02\Shares"</code></pre>
+                </div>
+            </div>
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="copyright-box">
+            <p class="copyright">&copy; Copyright <strong>Laszlo S</strong>. All Rights Reserved</p>
+            <div class="credits">
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script>mermaid.initialize({startOnLoad:true});</script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- Security -->
+  <script src="assets/js/security.js"></script>
+</body>
+
+</html>

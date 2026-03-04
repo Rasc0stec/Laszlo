@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#1a1a2e" stroke="#e04e39" stroke-width="4"/>
+
+  <!-- Letter A shape -->
+  <polygon points="100,30 45,155 65,155 100,75 135,155 155,155" fill="#e04e39"/>
+
+  <!-- Crossbar of A with diagonal cut (Ansible-style) -->
+  <polygon points="62,115 138,115 128,98 72,98" fill="#1a1a2e"/>
+
+  <!-- Diagonal slash through bottom-right leg -->
+  <polygon points="118,155 155,155 140,128 120,128" fill="#1a1a2e"/>
+
+  <!-- Text -->
+  <text x="100" y="185" font-family="Arial, sans-serif" font-size="13" font-weight="bold"
+        fill="#e04e39" text-anchor="middle" letter-spacing="4">ANSIBLE</text>
+</svg>
