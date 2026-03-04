@@ -1,0 +1,297 @@
+/* ============================================================
+   Mobile Optimizations for laszlocv.dk
+   Enhanced mobile user experience
+   ============================================================ */
+
+/* ============================================================
+   1. Touch-Friendly Buttons and Links
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* Larger touch targets (minimum 44x44px recommended) */
+  a, button, .btn {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 20px;
+  }
+
+  /* Navigation links */
+  .navbar a {
+    padding: 15px 20px !important;
+    font-size: 16px;
+  }
+
+  /* ============================================================
+     2. Typography Adjustments
+     ============================================================ */
+
+  /* Larger font for readability */
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* ============================================================
+     3. Spacing and Layout
+     ============================================================ */
+
+  /* More breathing room on mobile */
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* Timeline adjustments */
+  .timeline-date {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  .timeline-content {
+    padding: 20px !important;
+  }
+
+  /* Education boxes */
+  .education-box {
+    margin-bottom: 20px;
+    min-height: auto !important;
+  }
+
+  /* ============================================================
+     4. Images and Media
+     ============================================================ */
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .work-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Hero section */
+  .hero-title {
+    font-size: 2rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem !important;
+  }
+
+  /* ============================================================
+     5. Forms and Inputs
+     ============================================================ */
+
+  input, textarea, select {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 12px;
+  }
+
+  .form-control {
+    font-size: 16px;
+    height: auto;
+    padding: 12px;
+  }
+
+  /* ============================================================
+     6. Navigation Improvements
+     ============================================================ */
+
+  /* Better hamburger menu */
+  .mobile-nav-toggle {
+    font-size: 28px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  /* Dropdown menus */
+  .navbar-mobile .dropdown ul {
+    position: static;
+    display: none;
+    background-color: #f8f9fa;
+  }
+
+  .navbar-mobile .dropdown.active > ul {
+    display: block;
+  }
+
+  /* ============================================================
+     7. Cards and Boxes
+     ============================================================ */
+
+  .service-box,
+  .work-box,
+  .box-shadow-full {
+    margin-bottom: 30px;
+  }
+
+  /* ============================================================
+     8. Performance Optimizations
+     ============================================================ */
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Hardware acceleration for animations */
+  .navbar,
+  .work-box,
+  .service-box {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+  /* ============================================================
+     9. Accessibility
+     ============================================================ */
+
+  /* Focus visible for keyboard navigation */
+  a:focus,
+  button:focus,
+  input:focus {
+    outline: 3px solid #0066cc;
+    outline-offset: 2px;
+  }
+
+  /* Skip to main content link */
+  .skip-to-main {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #0066cc;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+  }
+
+  .skip-to-main:focus {
+    top: 0;
+  }
+
+  /* ============================================================
+     10. Loading Performance
+     ============================================================ */
+
+  /* Lazy load images placeholder */
+  img[loading="lazy"] {
+    background: #f0f0f0;
+  }
+
+}
+
+/* ============================================================
+   11. Small Phones (< 576px)
+   ============================================================ */
+@media (max-width: 576px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.75rem !important;
+  }
+
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* Stack timeline horizontally */
+  .timeline-item .col-md-3,
+  .timeline-item .col-md-9 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+}
+
+/* ============================================================
+   12. Tablets (576px - 992px)
+   ============================================================ */
+@media (min-width: 576px) and (max-width: 992px) {
+
+  .hero-title {
+    font-size: 2.5rem !important;
+  }
+
+  .container {
+    max-width: 90%;
+  }
+
+}
+
+/* ============================================================
+   13. Landscape Mode
+   ============================================================ */
+@media (max-width: 768px) and (orientation: landscape) {
+
+  .hero {
+    height: auto;
+    min-height: 70vh;
+  }
+
+  section {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+
+}
+
+/* ============================================================
+   14. Dark Mode Support (Optional)
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+  /* Add dark mode styles here if desired */
+}
+
+/* ============================================================
+   15. Reduce Motion (Accessibility)
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
