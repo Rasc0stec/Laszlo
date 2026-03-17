@@ -626,6 +626,36 @@ qmrestore online-backup:backup/vm/&lt;id&gt;/&lt;timestamp&gt; &lt;new-vmid&gt; 
             </div>
           </div>
 
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#r6">
+                <strong>Live Demo</strong> &nbsp;&ndash;&nbsp; Air-Gap Backup Automation (IPMI + PBS Sync)
+              </button>
+            </h2>
+            <div id="r6" class="accordion-collapse collapse" data-bs-parent="#testReportAccordion">
+              <div class="accordion-body">
+                <div class="case-meta"><span class="badge-tech">PBS</span><span class="badge-tech">iLO / IPMI</span><span class="badge-tech">Bash Scripting</span><span class="badge-tech">Automation</span></div>
+                <strong>Formål:</strong> Demonstration af fuldautomatiseret Air-Gap backup-løsning der tænder offline backup-server via IPMI, synkroniserer 32 VM snapshots og slukker serveren igen.<br><br>
+                <strong>Komponenter:</strong>
+                <ul>
+                  <li><strong>IPMI Power Control:</strong> <code>ipmitool</code> chassis power on/off via BMC interface</li>
+                  <li><strong>Proxmox Backup Server:</strong> Snapshot-baseret synkronisering mellem online → offline backup</li>
+                  <li><strong>Automation:</strong> Bash script med error handling, ping-verifikation og logging</li>
+                  <li><strong>Air-Gap Security:</strong> Offline server kun online under sync (≈16 minutter dagligt)</li>
+                </ul>
+                <strong>Test Output:</strong> 32/32 grupper synkroniseret · 12.667 GiB overført · Avg. 17.785 MiB/s<br><br>
+                <div style="margin-top:16px; padding:14px; background:#0d1825; border-left:3px solid #00c8ff; border-radius:4px;">
+                  <strong style="color:#00c8ff;">📊 Se komplet live test output:</strong><br>
+                  <a href="airgap-live-test.html" target="_blank" style="color:#00ff9d; text-decoration:none; font-weight:600; display:inline-flex; align-items:center; gap:6px; margin-top:8px;">
+                    <span>Air-Gap Backup Design — Live Test Dashboard</span>
+                    <i class="bi bi-box-arrow-up-right"></i>
+                  </a><br>
+                  <span style="font-size:11px; color:#3d5570; margin-top:6px; display:inline-block;">Inkluderer IPMI BMC info, hændelsestidslinje og fuldstændig snapshot sync-tabel</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div><!-- END TESTRAPPORTER -->
 
       </div>
