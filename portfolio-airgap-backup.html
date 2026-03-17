@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="da">
+  <style>body, p, h1, h2, h3, h4, h5, li, span, code, pre { user-select: none; -webkit-user-select: none; }</style>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Portfolio - Air-Gap Backup Automation</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <h1 class="logo"><a href="index.html">Portfolio Laszlo S</a></h1>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="index.html#about">Om Mig</a></li>
+          <li class="dropdown"><a href="#"><span>Projekter</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="portfolio-pixelwizards.html">Pixel Wizards Infrastruktur (H6)</a></li>
+              <li><a href="portfolio-airgap-backup.html">Air-Gap Backup Automation (H6)</a></li>
+              <li><a href="portfolio-ansible.html">Ansible Project Generator (H5)</a></li>
+              <li><a href="portfolio-cloudflix.html">CloudFlix Automatisering (H5)</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="portfolio-reports.html">Test & Fejlsøgning</a></li>
+          <li><a class="nav-link" href="index.html#contact">Kontakt</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero hero-single route bg-image" style="background-image: url(assets/img/stock-3.jpg)">
+    <div class="overlay-mf"></div>
+    <div class="hero-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h2 class="hero-title mb-4">Air-Gap Backup Automation</h2>
+          <ol class="breadcrumb d-flex justify-content-center">
+            <li class="breadcrumb-item">
+              <a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Project Details</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+            <div class="col-lg-12">
+                <div class="portfolio-description">
+                  <h2>Projektoversigt & Formål</h2>
+                  <p>
+                    Air-Gap Backup-projektet, udviklet som en del af Pixel Wizards (H6) infrastrukturen, løser en kritisk udfordring i enterprise backup-strategier: hvordan sikrer man offline backup-redundans uden at kompromittere sikkerhed eller introducere manuel overhead?
+                  </p>
+                  <p>
+                    Løsningen er en fuldautomatiseret Air-Gap backup-proces der via IPMI/BMC power management kontrollerer en fysisk isoleret backup-server. Serveren tændes automatisk via netværket, synkroniserer 32 VM snapshots (12+ GiB dagligt) fra online Proxmox Backup Server til offline PBS, og slukkes igen - alt sammen uden manuel intervention.
+                  </p>
+                  <p>
+                    Resultatet er en backup-strategi der kombinerer convenience af cloud-backup med den fysiske sikkerhed af tape-backup: offline serveren er kun tilgængelig i gennemsnitligt 16 minutter dagligt, hvilket gør den immune over for ransomware, netværksangreb og utilsigtet sletning.
+                  </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row gy-4 mt-4">
+            <div class="col-lg-4">
+                <div class="portfolio-info">
+                  <h3>Projektinformation</h3>
+                  <ul>
+                    <li><strong>Kategori</strong>: Backup & Disaster Recovery</li>
+                    <li><strong>Teknologier</strong>: Proxmox Backup Server, IPMI/iLO, Bash, Cron</li>
+                    <li><strong>Projekt Dato</strong>: Februar 2026</li>
+                    <li><strong>Projekt Scope</strong>: H6 Svendeprøve (Pixel Wizards)</li>
+                  </ul>
+                </div>
+
+                <div class="portfolio-info mt-4">
+                  <h3>Kernekompetencer</h3>
+                  <ul>
+                    <li><strong>IPMI/BMC Management:</strong> Remote power control via ipmitool over netværk</li>
+                    <li><strong>Proxmox Backup Server:</strong> Snapshot-baseret replikering og datastore management</li>
+                    <li><strong>Bash Scripting:</strong> Error handling, logging, ping-verifikation, timeout management</li>
+                    <li><strong>Network Troubleshooting:</strong> Layer 2/3 debugging (ARP, VLAN, routing)</li>
+                    <li><strong>Security by Design:</strong> Air-Gap isolation, minimal attack surface</li>
+                  </ul>
+                </div>
+
+                <div class="portfolio-info mt-4">
+                  <h3>Live Demo</h3>
+                  <p><a href="airgap-live-test.html" target="_blank" class="btn btn-primary btn-sm">
+                    <i class="bi bi-display"></i> Se Live Test Output
+                  </a></p>
+                  <p style="font-size: 0.9em; color: #666;">Interaktivt dashboard med IPMI info, tidslinje og komplet sync-statistik</p>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="portfolio-description">
+                    <h2>Teknisk Arkitektur</h2>
+                    <p>
+                        Air-Gap løsningen består af tre primære komponenter der arbejder sammen for at sikre automatiseret, sikker og verificerbar backup-replikering.
+                    </p>
+
+                    <div class="mermaid-diagram-container" style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
+                        <h5 class="text-center">Backup Workflow</h5>
+                        <pre class="mermaid" style="text-align: center;">
+flowchart TB
+    A[Cron Job Trigger<br/>Daglig kl. 14:00] --> B[Bash Script Start]
+    B --> C{IPMI Power-On<br/>PIW-BACK-212}
+    C --> D[Venter på Ping Response<br/>~2m 50s boot]
+    D --> E{Server Online?}
+    E -->|Timeout| F[Log Error & Exit]
+    E -->|Success| G[Venter 60s på Services]
+    G --> H[PBS Sync Start<br/>32 VM Grupper]
+    H --> I[Snapshot Replikering<br/>Online → Offline PBS]
+    I --> J{Sync Success?}
+    J -->|Fejl| K[Log Error<br/>Server Forbliver Tændt]
+    J -->|Success| L[IPMI Power-Off]
+    L --> M[Log Success Stats<br/>Air-Gap Aktiveret]
+                        </pre>
+                    </div>
+
+                    <div class="mermaid-diagram-container mt-4" style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
+                        <h5 class="text-center">Netværkstopologi</h5>
+                        <pre class="mermaid" style="text-align: center;">
+graph TB
+    subgraph "Management VLAN 250"
+        IPMI[iLO/BMC Interface<br/>10.10.250.212]
+    end
+
+    subgraph "Backup VLAN 40"
+        ONLINE[PIW-BACK-211<br/>Online PBS<br/>Altid Aktiv]
+        OFFLINE[PIW-BACK-212<br/>Offline PBS<br/>Air-Gap Isoleret]
+    end
+
+    subgraph "Production VLANs"
+        VM1[32 Production VMs]
+    end
+
+    VM1 -->|Daglig Backup| ONLINE
+    ONLINE -->|Sync Script| IPMI
+    IPMI -->|Power Control| OFFLINE
+    ONLINE -.->|Kun under Sync<br/>~16 min/dag| OFFLINE
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="portfolio-description mt-4">
+                    <h2>Implementation & Udfordringer</h2>
+
+                    <h4>Bash Automation Script</h4>
+                    <p>Scriptet håndterer hele backup-cyklussen med omfattende error handling:</p>
+                    <pre style="background: #f5f5f5; padding: 15px; border-radius: 5px; overflow-x: auto;"><code>#!/bin/bash
+# /usr/local/bin/sync_online_til_offline_backup.sh
+
+OFFLINE_IP="10.10.250.212"
+OFFLINE_PBS="10.10.40.212"
+IPMI_USER="Administrator"
+IPMI_PASS="&lt;secret&gt;"
+
+# 1. Tænd server via IPMI
+ipmitool -I lanplus -H $OFFLINE_IP -U $IPMI_USER -P $IPMI_PASS chassis power on
+
+# 2. Vent på server boot (~2m 50s)
+until ping -c1 $OFFLINE_PBS &>/dev/null; do sleep 5; done
+sleep 60  # Vent på PBS services
+
+# 3. Synkroniser alle datastores
+proxmox-backup-manager sync-job run --store offline-backup
+
+# 4. Sluk server ved success
+ipmitool -I lanplus -H $OFFLINE_IP -U $IPMI_USER -P $IPMI_PASS chassis power off
+</code></pre>
+
+                    <h4>Kritiske Fejlsøgningscases</h4>
+                    <div class="alert alert-info">
+                        <strong>Case #1: IPMI Connection Failure (Layer 2)</strong><br>
+                        <code>ipmitool</code> fejlede med "Unable to establish RMCP+ session" selvom port 623 var åben.
+                        Rodårsag: ARP resolution fejlede grundet konflikt mellem VLAN-aware bridge (vmbr2) og manuel subinterface (vmbr2.250).
+                        Løsning: Fjernet subinterface, konfigureret VLAN direkte på bridge + rettet missing VLAN-config på fysisk switch-port.
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <strong>Challenge: Timing & Reliability</strong><br>
+                        Serveren skal være 100% stabil tændt under sync (12+ GiB transfer). Implemented ping-loop med timeout,
+                        service wait-periode, og error logging der efterlader serveren tændt ved fejl så manuel troubleshooting er mulig.
+                    </div>
+                </div>
+
+                <div class="portfolio-description mt-4">
+                    <h2>Resultater & Metrics</h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h3 class="text-primary">32/32</h3>
+                                    <p>VM Grupper Synkroniseret Dagligt</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h3 class="text-primary">12.667 GiB</h3>
+                                    <p>Gennemsnitlig Daglig Transfer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h3 class="text-primary">17.785 MiB/s</h3>
+                                    <p>Gennemsnitshastighed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h3 class="text-success">~16 min</h3>
+                                    <p>Daglig Online Eksponering</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h3 class="text-success">100%</h3>
+                                    <p>Automation Success Rate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-description mt-4">
+                    <h2>Læring & Takeaways</h2>
+                    <ul>
+                        <li><strong>IPMI er kraftfuldt men finurligt:</strong> Layer 2 networking (ARP, VLAN) skal være 100% korrekt - IPMI tolererer ikke misconfig</li>
+                        <li><strong>Bash scripting kræver defensive practices:</strong> Altid håndter timeouts, log alle states, og design for fejl-modes</li>
+                        <li><strong>Air-Gap er en trade-off:</strong> Maksimal sikkerhed vs. convenience - automation mindsker manual overhead betydeligt</li>
+                        <li><strong>Real-world troubleshooting:</strong> Debugging på tværs af Proxmox, BMC firmware, switch-config og Linux networking gav dyb systemforståelse</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="copyright-box">
+            <p class="copyright">&copy; Copyright <strong>Laszlo S</strong>. All Rights Reserved</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/security.js"></script>
+  <script>mermaid.initialize({ startOnLoad: true });</script>
+
+</body>
+</html>
