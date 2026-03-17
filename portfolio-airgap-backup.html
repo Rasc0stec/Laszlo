@@ -81,7 +81,7 @@
                     Air-Gap Backup-projektet, udviklet som en del af Pixel Wizards (H6) infrastrukturen, løser en kritisk udfordring i enterprise backup-strategier: hvordan sikrer man offline backup-redundans uden at kompromittere sikkerhed eller introducere manuel overhead?
                   </p>
                   <p>
-                    Løsningen er en fuldautomatiseret Air-Gap backup-proces der via IPMI/BMC power management kontrollerer en fysisk isoleret backup-server. Serveren tændes automatisk via netværket, synkroniserer 32 VM snapshots (12+ GiB dagligt) fra online Proxmox Backup Server til offline PBS, og slukkes igen - alt sammen uden manuel intervention.
+                    Løsningen er en fuldautomatiseret Air-Gap backup-proces der via IPMI/BMC power management kontrollerer en fysisk isoleret backup-server. Serveren tændes automatisk via netværket, synkroniserer 32 VM snapshots (12+ GiB dagligt) fra online Proxmox Backup Server til offline PBS, og slukkes igen - alt sammen uden manuel håndtering.
                   </p>
                   <p>
                     Resultatet er en backup-strategi der kombinerer convenience af cloud-backup med den fysiske sikkerhed af tape-backup: offline serveren er kun tilgængelig i gennemsnitligt 16 minutter dagligt, hvilket gør den immune over for ransomware, netværksangreb og utilsigtet sletning.
@@ -131,45 +131,45 @@
 
                     <div class="mermaid-diagram-container" style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
                         <h5 class="text-center">Backup Workflow</h5>
-                        <pre class="mermaid" style="text-align: center;">
-flowchart TB
-    A[Cron Job Trigger<br/>Daglig kl. 14:00] --> B[Bash Script Start]
-    B --> C{IPMI Power-On<br/>PIW-BACK-212}
-    C --> D[Venter på Ping Response<br/>~2m 50s boot]
+                        <div class="mermaid">
+graph TD
+    A[Cron Job Trigger - Daglig kl 14:00] --> B[Bash Script Start]
+    B --> C[IPMI Power-On PIW-BACK-212]
+    C --> D[Venter på Ping Response - 2m 50s boot]
     D --> E{Server Online?}
     E -->|Timeout| F[Log Error & Exit]
     E -->|Success| G[Venter 60s på Services]
-    G --> H[PBS Sync Start<br/>32 VM Grupper]
-    H --> I[Snapshot Replikering<br/>Online → Offline PBS]
+    G --> H[PBS Sync Start - 32 VM Grupper]
+    H --> I[Snapshot Replikering Online to Offline PBS]
     I --> J{Sync Success?}
-    J -->|Fejl| K[Log Error<br/>Server Forbliver Tændt]
+    J -->|Fejl| K[Log Error - Server Forbliver Tændt]
     J -->|Success| L[IPMI Power-Off]
-    L --> M[Log Success Stats<br/>Air-Gap Aktiveret]
-                        </pre>
+    L --> M[Log Success Stats - Air-Gap Aktiveret]
+                        </div>
                     </div>
 
                     <div class="mermaid-diagram-container mt-4" style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
                         <h5 class="text-center">Netværkstopologi</h5>
-                        <pre class="mermaid" style="text-align: center;">
-graph TB
-    subgraph "Management VLAN 250"
-        IPMI[iLO/BMC Interface<br/>10.10.250.212]
+                        <div class="mermaid">
+graph TD
+    subgraph MGMT[Management VLAN 250]
+        IPMI[iLO/BMC Interface - 10.10.250.212]
     end
 
-    subgraph "Backup VLAN 40"
-        ONLINE[PIW-BACK-211<br/>Online PBS<br/>Altid Aktiv]
-        OFFLINE[PIW-BACK-212<br/>Offline PBS<br/>Air-Gap Isoleret]
+    subgraph BACKUP[Backup VLAN 40]
+        ONLINE[PIW-BACK-211 - Online PBS - Altid Aktiv]
+        OFFLINE[PIW-BACK-212 - Offline PBS - Air-Gap Isoleret]
     end
 
-    subgraph "Production VLANs"
+    subgraph PROD[Production VLANs]
         VM1[32 Production VMs]
     end
 
     VM1 -->|Daglig Backup| ONLINE
     ONLINE -->|Sync Script| IPMI
     IPMI -->|Power Control| OFFLINE
-    ONLINE -.->|Kun under Sync<br/>~16 min/dag| OFFLINE
-                        </pre>
+    ONLINE -.->|Kun under Sync - 16 min/dag| OFFLINE
+                        </div>
                     </div>
                 </div>
 
