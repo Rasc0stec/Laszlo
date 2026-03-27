@@ -1,0 +1,34 @@
+🎓 Nyuddannet Datatekniker søger ny udfordring inden for Infrastructure & Networking 🚀
+
+Efter tre spændende år som datatekniker elev hos Aeven/NNIT, hvor jeg har specialiseret mig i enterprise infrastruktur, er jeg nu klar til at tage næste skridt i min karriere.
+
+Mine kompetencer spænder bredt:
+
+🔷 Enterprise Networking (Cisco CCNP ENARSI-niveau)
+Avanceret konfiguration af routing protocols (BGP, OSPF, EIGRP), DMVPN, IPsec VPNs og Zone-Based Firewalls. Erfaring med design af komplekse multi-site netværksarkitekturer.
+
+🔷 Windows Server & Active Directory
+Omfattende erfaring med AD DS infrastructure, Tiered Administration Model, Group Policy management, Exchange Server 2019, SQL Server og cross-platform integration. Fra design til implementering af enterprise identity management.
+
+🔷 Linux Administration (Multi-Distribution)
+Solid erfaring med Red Hat Enterprise Linux (RHEL 7-9), SUSE Linux Enterprise Server og Debian/Ubuntu. Specialiseret i OS templating, automation og cross-platform workloads mellem Windows og Linux miljøer.
+
+🔷 Virtualisering & Automation
+Hands-on erfaring med Proxmox VE (HA clustering, Ceph storage), VMware og Infrastructure as Code via Ansible og PowerShell. Fokus på skalerbare, automatiserede løsninger.
+
+Jeg søger en stilling hvor jeg kan arbejde med:
+✅ Enterprise infrastruktur på tværs af platforme
+✅ Netværksdesign og -optimering
+✅ Automation og Infrastructure as Code
+✅ Hybrid cloud løsninger
+✅ Komplekse tekniske udfordringer i et dynamisk team
+
+Jeg trives med at dypdykke i tekniske problemstillinger og bygge robuste, velarkitekterede løsninger. Min praktiske erfaring fra Aeven har givet mig indsigt i enterprise-niveau drift og vedligeholdelse af kritisk infrastruktur i stor skala.
+
+Er I på udkig efter en dedikeret infrastruktur specialist med passion for teknologi og kontinuerlig læring? Lad os tage en uforpligtende snak!
+
+📧 schneim89@gmail.com
+📞 +45 21325401
+🌐 laszlocv.dk
+
+#Datatekniker #Infrastructure #Networking #Cisco #CCNP #Linux #WindowsServer #Automation #CloudInfrastructure #JobSøgning #ITJobs #Danmark
